@@ -1,0 +1,98 @@
+##  MODEL
+model
+{
+	## Initial conditions
+	## beginning of week 2010_49
+	for(t in 1:1)
+	{
+		## 2 age groups, children <16, adults 16+
+		for(a in CHILD:ADULT)
+		{
+			## Expected number in ICU starts at 0 at time 1
+			ICU[t,a] <- 0
+
+			## new arrivals at first time point (when ICU = 0)
+			lambda[t,a] ~ dunif(0,250)
+			lnlambda[t,a] <- log(lambda[t,a])
+
+			## Assume positivity at first time point same as at beginning of
+			## week 2010_50 (pos[1,a])
+			conf.cases[t,a] <- lambda[t,a] * pos[t,a]
+
+		}
+	}
+		
+	## beginning of weeks 2010_50 to 2011_8
+	for(t in 2:T)
+	{
+		for(a in CHILD:ADULT)
+		{
+			## Observed number in ICU
+			obs.ICU[t-1,a] ~ dpois(ICU[firstdayofweek[t],a])
+
+			## Deviance
+			yhat.ICU[t-1,a] <- ICU[firstdayofweek[t],a]
+			dev.ICU[t-1,a] <- 2 * ((yhat.ICU[t-1,a] - obs.ICU[t-1,a]) - obs.ICU[t-1,a]*(log(yhat.ICU[t-1,a])-log(obs.ICU[t-1,a])))
+
+			## Datamart positivity (use as lower bound)
+			y.pos[t-1,a] ~ dbin(lowpos[t-1,a], n.pos[t-1,a])
+			lowpos[t-1,a] ~ dbeta(1,1)
+			pos[t-1,a] ~ dunif(lowpos[t-1,a],1)
+
+			yhat.pos[t-1,a] <- lowpos[t-1,a] * n.pos[t-1,a]
+			dev.pos[t-1,a] <- 2 * (y.pos[t-1,a] * (log(y.pos[t-1,a]) - log(yhat.pos[t-1,a])) + (n.pos[t-1,a] - y.pos[t-1,a]) * (log(n.pos[t-1,a] - y.pos[t-1,a]) - log(n.pos[t-1,a] -yhat.pos[t-1,a])))
+		}
+	}
+
+	## daily
+	for(t in 2:firstdayofweek[T])
+	{
+		for(a in CHILD:ADULT)
+		{
+			## Expected number in ICU at t is convolution of new arrivals <t
+			## with probability they are still there at time t
+			ICU[t,a] <- sum(remain.GivenEntry[t,a,1:(t-1)])
+			for(s in 1:(t-1))
+			{
+				## new arrivals at time s * (1 - Pr{LOS <= t-s})
+				remain.GivenEntry[t,a,s] <- lambda[s,a] * exp(-mu[a]*(t-s))
+			}
+
+			## Incidence rate (weekly number of new admissions), random
+			## walk process prior
+			lambda[t,a] <- exp(lnlambda[t,a])
+			lnlambda[t,a] ~ dnorm(lnlambda[t-1,a], precLambda[a])
+
+			## E(# exits from ICU in [t-1,t))
+			exp.exits[t-1,a] <- mu[a] * ICU[t-1,a]
+
+			## Get confirmed new admissions from lambda * pos
+			conf.cases[t,a] <- lambda[t,a] * pos[week[t],a]
+		}
+	}
+	
+	for(a in CHILD:ADULT)
+	{
+		## Exit rate
+		mu[a] <- exp(-coeffs[a])
+
+		## Average LoS
+		avgLoS[a] <- 1 / mu[a]
+
+		## Cumulative new admissions (suspected & confirmed)
+		tot.lambda[a] <- sum(lambda[1:firstdayofweek[T],a])
+		tot.conf[a] <- sum(conf.cases[1:firstdayofweek[T],a])
+
+		## random walk sd has a uniform prior
+		precLambda[a] <- 1 / pow(sdLambda[a],2)
+		sdLambda[a] ~ dunif(0.1,2.7)
+	}
+
+	## estimates (mean, se) of parameters of LoS distributions from survival analysis
+	coeffs[ADULT] <- intcp
+	coeffs[CHILD] <- intcp + coeffChild
+	intcp ~ dnorm(intcp.mean, intcp.prec)
+	intcp.prec <- 1 / pow(intcp.se,2)
+	coeffChild ~ dnorm(c.mean, c.prec)
+	c.prec <- 1 / pow(c.se,2)
+}

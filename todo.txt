@@ -1,0 +1,31 @@
+- Write up the two models from the melding paper and Anne's original paper
+  - motivation will come from Anne's paper - model specifics more likely from the melding
+- Interested in phi_2 of the phis (check the paper)
+
+Practicalities:
+
+WSRE: Now needs to be 2D?
+  - `wf_mean` now a list of 2D vectors? Should work as is?
+    - Absolutely not - need to adjust underlying KDEs to work for N-dim.
+
+Stage one: ICU submodel
+  - Sample stage one prior / posterior
+    - Do we have an expression for the stage one prior?
+    - Confirm that the prior is flat enough
+      - plot samples / prior estimate
+      - this is pretty much confirmed
+      - this means we don't have to target p_{1}(phi, psi_{1}, y_{1}) / p_{1}(phi) in stage one, because the prior marginal has minimal difference
+    - motivates considering the model one prior in stage two
+
+Stage two: ICU + Severity submodel.
+    - recode the stage two model in Stan
+    - Sample original stage two (without kludges?)
+    - estimate the prior marginal using `wsre`
+    - decided what kind of pooling we would like to use
+      - could do both? Linear 1/2 + log equal
+    - sample the stage two prior (which includes the prior from model 1, the prior from model 2, the pooled prior, and the stage 2 posterior)
+    - Compare and contrast!
+
+NOTES: 
+- phi_1 is tot.conf[1] and phi_2 is tot.conf[2]
+- Given the plot in the paper - we should be interested in tot.conf[1]

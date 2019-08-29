@@ -1,0 +1,17 @@
+# complied objects
+*.so
+*.o
+*.dll
+#*.hpp
+#*.cpp
+
+# R outputs that one does not normally want to VC
+*.rds
+*.pdf
+*.png
+
+# the package directory - sometimes useful sometimes not
+#package/
+
+# the tex file for the rmd - useful for me, don't check into the repo
+full-melding-model-ex.tex

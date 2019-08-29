@@ -1,0 +1,125 @@
+---
+title: "ICU + Severity Example for `wsre`"
+author: "Andrew Manderson"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+fontfamily: tgpagella
+fontsize: 10pt
+papersize: a4
+geometry: margin=2.25cm
+bibliography: ../0bibliography/year-1-bib.bib
+csl: aam71-test.csl
+output: 
+  pdf_document:
+    includes:
+      in_header:
+        tex-input/pre.tex
+    fig_caption: true
+    number_sections: true
+    keep_tex: true
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA, out.width = "85%", fig.align = "center", auto_pdf = TRUE)
+```
+
+# Introduction
+
+High level summary:
+
+Two models arising from different data sources / scopes.
+Not obvious how to join them into one big model.
+Non-invertible link function makes the ICU model a clear choice for stage one.
+
+
+## Origins of the models
+
+### ICU
+
+### Severity
+
+## How best to join? 
+
+Don't know if this is necessarily a paragraph/section.
+
+## Model ordering
+
+- Here, there is a natural ordering due to the non-invertible link function.
+- In general it doesn't mathematically matter about this, because it can be extended into an invertible one, but in practice the performance of the multi-stage sampler heavily depends on the choice of link function extension.
+
+- The natural ordering is also widest / least informative model first. 
+- This way we are least sensitive to differences in location between the models.
+- The cost is that we are susceptible to particle degeneracy / sample shrinkage.
+  - This is a problem we can monitor though, differences in location we cannot. 
+
+# Compare the Priors
+
+See Figure&nbsp;\ref{fig:prior_comparison}.
+
+```{r prior_comparison, fig.cap = "Prior comparison, should look like the paper."}
+knitr::include_graphics("plots/prior-comparison.pdf")
+```
+
+# Sample the ICU Posterior
+
+See Figure&nbsp;\ref{fig:icu_post_plot}.
+
+```{r icu_post_plot, fig.cap = "ICU model posterior, same scales as prior."}
+knitr::include_graphics("plots/icu-posterior.pdf")
+```
+
+
+# Estimate the severity self-density ratio using `wsre`
+
+We use a grid of values for $\phi_{1}$ and $\phi_{2}$ based on taking 10 equally spaced values, between 30 and 275 for $\phi_{1}$, and 500 and 3000 for $\phi_{2}$, and taking the outer product of these values.
+
+- Is is possible to visualise this estimate? Parallel coordinates? Four input dimensions and an output dimension is hard.
+
+# Melding
+
+
+## Pooled priors
+
+- Eventually I would like to compare linear / log pooling.
+    - It's an easy, drop in replacement.
+
+## Compare the melded output with/without wsre
+
+### With `wsre`
+
+$\phi$ trace:
+
+```{r phi_trace_wsre, fig.cap = "$\\phi$ trace"}
+knitr::include_graphics("plots/stage-two-wsre-phi-trace.pdf")
+```
+
+$\psi_{2}$ trace:
+
+```{r theta_tr}
+knitr::include_graphics("plots/stage-two-wsre-theta-trace.pdf")
+```
+
+<!-- TODO: Change theta to phi
+ -->
+
+Something is blowing up and pining the $\psi_{2}$ traces to 1 or 0.
+This is a numerical instability, I think its why Rob wrote the numerically stable continuous extension to the binomial? This must be an issue inside the `lgamma` function or the like
+
+# Conclusion
+
+Concise summary
+
+<!-- -------------------- END OF MAIN BODY OF DOCUMENT -------------------- -->
+\newpage
+
+<!-- The {-} tag here suppresses the section numbering. -->
+# Bibliography {-}
+
+<!-- This makes pandoc-citeproc put the references before the end of document. -->
+<div id="refs"></div>
+
+\newpage
+
+<!-- Now switch to alphabetical numbering for the appendix, and reset the counter. -->
+\renewcommand{\thesection}{\Alph{section}}
+\setcounter{section}{0}
+
+# Appendix 
