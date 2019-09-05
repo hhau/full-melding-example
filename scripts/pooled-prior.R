@@ -10,7 +10,6 @@ library(futile.logger)
 
 flog.info("Loading prior samples, assembling pooled prior.")
 
-
 model1_im <- readRDS("rds/model1-im.rds")
 model1_dprior_im <- readRDS("rds/model1-dprior-im.rds")
 model1_kde <- readRDS("rds/model1-kde.rds")

@@ -29,3 +29,11 @@ Stage two: ICU + Severity submodel.
 NOTES: 
 - phi_1 is tot.conf[1] and phi_2 is tot.conf[2]
 - Given the plot in the paper - we should be interested in tot.conf[1]
+
+
+TODO: This really needs to be faster
+
+  - If the mixing properties are good, we can just run a nodes worth of chains for eight hours.
+  - Probably worth profiling what exactly is slow here? 
+    - I know the log pooled_prior term is slow, as is the log_sev_prior term. The `wsre` bit takes a long time to evaluate. Not sure I can speed that up?
+    

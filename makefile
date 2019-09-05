@@ -17,7 +17,9 @@ STAN_FILES = $(SCRIPTS)/stan-files
 
 # add to as needed
 ALL_PLOTS = $(PLOTS)/prior-comparison.pdf \
-	$(PLOTS)/icu-posterior.pdf
+	$(PLOTS)/icu-posterior.pdf \
+	$(PLOTS)/stage-two-wsre-phi-trace.pdf \
+	$(PLOTS)/stage-two-psi-trace.pdf
 
 all : $(WRITEUP)
 
@@ -58,3 +60,18 @@ $(PLOTS)/prior-comparison.pdf : $(SCRIPTS)/prior-plotter.R $(ICU_PRIOR_SAMPLES) 
 # wsre estimate
 $(RDS)/sev-prior-wsre-estimate.rds : $(SCRIPTS)/sev-prior-wsre-sampler.R $(STAN_FILES)/sev-prior-wsre.stan
 	$(RSCRIPT) $<
+
+# Stage two
+POOLED_PRIOR = $(SCRIPTS)/pooled-prior.R
+
+$(RDS)/wsre-stage-two-stage-one-indices.rds : $(SCRIPTS)/stage-two-wsre.R $(STAN_FILES)/sev-prior-psi-step.stan $(STAN_FILES)/sev-prior-stage-two-phi-lp.stan $(ICU_POST_SAMPLES) $(POOLED_PRIOR)
+	$(RSCRIPT) $<
+
+$(RDS)/wsre-stage-two-phi-samples.rds : $(RDS)/wsre-stage-two-stage-one-indices.rds 
+
+$(RDS)/wsre-stage-two-psi-samples.rds : $(RDS)/wsre-stage-two-stage-one-indices.rds 
+
+$(PLOTS)/stage-two-wsre-phi-trace.pdf : $(SCRIPTS)/stage-two-wsre-plotter.R $(PLOT_SETTINGS) $(RDS)/wsre-stage-two-phi-samples.rds $(RDS)/wsre-stage-two-psi-samples.rds
+	$(RSCRIPT) $<
+
+$(PLOTS)/stage-two-psi-trace.pdf : $(PLOTS)/stage-two-wsre-phi-trace.pdf

@@ -1,0 +1,63 @@
+INFO [2019-08-29 15:45:57] Iteration: 2,  proposed_phi[1]: 124.232377,  proposed_phi[2]: 1051.288765,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -1.413778, log_icu_prior_term: 0.000000,  log_sev_prior_term: 2.874235, log_sev_prob: -38.295796, log_alpha: -36.835339.
+INFO [2019-08-29 15:45:58] Iteration: 2,   pi_det_curr: 0.731383,   pi_det_prop*: 0.567889,  chi_grp[1]_curr: 126.208756,  chi_grp[1]_prop*: 149.221250,  chi_grp[2]_curr: 1488.709523,  chi_grp[2]_prop*: 1974.689478,
+      
+INFO [2019-08-29 15:45:59] Iteration: 3,  proposed_phi[1]: 182.682959,  proposed_phi[2]: 1453.415275,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -2.694366, log_icu_prior_term: -0.000003,  log_sev_prior_term: 9.132430, log_sev_prob: -Inf, log_alpha: -Inf.
+INFO [2019-08-29 15:45:59] Iteration: 3,   pi_det_curr: 0.567889,   pi_det_prop*: 0.511238,  chi_grp[1]_curr: 149.221250,  chi_grp[1]_prop*: 169.767375,  chi_grp[2]_curr: 1974.689478,  chi_grp[2]_prop*: 2096.956480,
+      
+INFO [2019-08-29 15:46:01] Iteration: 4,  proposed_phi[1]: 128.842782,  proposed_phi[2]: 1352.768194,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.993570, log_icu_prior_term: -0.000002,  log_sev_prior_term: 2.146922, log_sev_prob: -97.763219, log_alpha: -96.609869.
+INFO [2019-08-29 15:46:01] Iteration: 4,   pi_det_curr: 0.511238,   pi_det_prop*: 0.569288,  chi_grp[1]_curr: 169.767375,  chi_grp[1]_prop*: 123.653398,  chi_grp[2]_curr: 2096.956480,  chi_grp[2]_prop*: 1883.881383,
+      
+INFO [2019-08-29 15:46:03] Iteration: 5,  proposed_phi[1]: 126.591654,  proposed_phi[2]: 1292.346115,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -1.009085, log_icu_prior_term: -0.000001,  log_sev_prior_term: 2.092036, log_sev_prob: -Inf, log_alpha: -Inf.
+INFO [2019-08-29 15:46:03] Iteration: 5,   pi_det_curr: 0.569288,   pi_det_prop*: 0.506284,  chi_grp[1]_curr: 123.653398,  chi_grp[1]_prop*: 155.722426,  chi_grp[2]_curr: 1883.881383,  chi_grp[2]_prop*: 2241.678174,
+      
+INFO [2019-08-29 15:46:05] Iteration: 6,  proposed_phi[1]: 99.291929,  proposed_phi[2]: 1355.631428,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.103114, log_icu_prior_term: -0.000002,  log_sev_prior_term: 0.217381, log_sev_prob: -48.859796, log_alpha: -48.745530.
+INFO [2019-08-29 15:46:05] Iteration: 6,   pi_det_curr: 0.506284,   pi_det_prop*: 0.611314,  chi_grp[1]_curr: 155.722426,  chi_grp[1]_prop*: 131.746278,  chi_grp[2]_curr: 2241.678174,  chi_grp[2]_prop*: 1837.421318,
+      
+INFO [2019-08-29 15:46:06] Iteration: 7,  proposed_phi[1]: 132.497587,  proposed_phi[2]: 1476.602004,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -1.085667, log_icu_prior_term: -0.000003,  log_sev_prior_term: 2.378946, log_sev_prob: -Inf, log_alpha: -Inf.
+INFO [2019-08-29 15:46:06] Iteration: 7,   pi_det_curr: 0.611314,   pi_det_prop*: 0.482280,  chi_grp[1]_curr: 131.746278,  chi_grp[1]_prop*: 174.605848,  chi_grp[2]_curr: 1837.421318,  chi_grp[2]_prop*: 2236.446981,
+      
+INFO [2019-08-29 15:46:08] Iteration: 8,  proposed_phi[1]: 90.893835,  proposed_phi[2]: 1545.357888,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.022630, log_icu_prior_term: -0.000003,  log_sev_prior_term: 0.080121, log_sev_prob: -198.983251, log_alpha: -198.925763.
+INFO [2019-08-29 15:46:08] Iteration: 8,   pi_det_curr: 0.482280,   pi_det_prop*: 0.459193,  chi_grp[1]_curr: 174.605848,  chi_grp[1]_prop*: 173.443266,  chi_grp[2]_curr: 2236.446981,  chi_grp[2]_prop*: 2467.933810,
+      
+INFO [2019-08-29 15:46:10] Iteration: 9,  proposed_phi[1]: 77.808457,  proposed_phi[2]: 1486.105099,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: 0.037940, log_icu_prior_term: -0.000002,  log_sev_prior_term: -0.041752, log_sev_prob: -101.004252, log_alpha: -101.008066.
+INFO [2019-08-29 15:46:10] Iteration: 9,   pi_det_curr: 0.459193,   pi_det_prop*: 0.544844,  chi_grp[1]_curr: 173.443266,  chi_grp[1]_prop*: 150.960080,  chi_grp[2]_curr: 2467.933810,  chi_grp[2]_prop*: 2009.586380,
+      
+INFO [2019-08-29 15:46:12] Iteration: 10,  proposed_phi[1]: 103.808083,  proposed_phi[2]: 1105.445653,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.494643, log_icu_prior_term: -0.000000,  log_sev_prior_term: 0.999688, log_sev_prob: -6.590171, log_alpha: -6.085126.
+INFO [2019-08-29 15:46:12] Iteration: 10,   pi_det_curr: 0.544844,   pi_det_prop*: 0.487900,  chi_grp[1]_curr: 150.960080,  chi_grp[1]_prop*: 148.933178,  chi_grp[2]_curr: 2009.586380,  chi_grp[2]_prop*: 2362.950524,
+      
+INFO [2019-08-29 15:46:12] Iteration: 10
+INFO [2019-08-29 15:46:14] Iteration: 11,  proposed_phi[1]: 141.558347,  proposed_phi[2]: 1425.148112,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -1.415463, log_icu_prior_term: -0.000002,  log_sev_prior_term: 3.263572, log_sev_prob: -141.756064, log_alpha: -139.907957.
+INFO [2019-08-29 15:46:14] Iteration: 11,   pi_det_curr: 0.487900,   pi_det_prop*: 0.587651,  chi_grp[1]_curr: 148.933178,  chi_grp[1]_prop*: 146.268282,  chi_grp[2]_curr: 2362.950524,  chi_grp[2]_prop*: 1955.717034,
+      
+INFO [2019-08-29 15:46:15] Iteration: 12,  proposed_phi[1]: 154.110595,  proposed_phi[2]: 889.659087,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -3.138596, log_icu_prior_term: 0.000001,  log_sev_prior_term: 6.880923, log_sev_prob: -Inf, log_alpha: -Inf.
+INFO [2019-08-29 15:46:15] Iteration: 12,   pi_det_curr: 0.587651,   pi_det_prop*: 0.548893,  chi_grp[1]_curr: 146.268282,  chi_grp[1]_prop*: 156.291584,  chi_grp[2]_curr: 1955.717034,  chi_grp[2]_prop*: 1986.998800,
+      
+INFO [2019-08-29 15:46:17] Iteration: 13,  proposed_phi[1]: 92.084672,  proposed_phi[2]: 1123.805545,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.144098, log_icu_prior_term: -0.000000,  log_sev_prior_term: 0.291999, log_sev_prob: -1.172776, log_alpha: -1.024875.
+INFO [2019-08-29 15:46:17] Iteration: 13,   pi_det_curr: 0.548893,   pi_det_prop*: 0.564227,  chi_grp[1]_curr: 156.291584,  chi_grp[1]_prop*: 141.485849,  chi_grp[2]_curr: 1986.998800,  chi_grp[2]_prop*: 1957.672340,
+      
+INFO [2019-08-29 15:46:19] Iteration: 14,  proposed_phi[1]: 139.523099,  proposed_phi[2]: 1091.984471,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -1.917956, log_icu_prior_term: -0.000000,  log_sev_prior_term: 3.981577, log_sev_prob: -79.001674, log_alpha: -76.938053.
+INFO [2019-08-29 15:46:19] Iteration: 14,   pi_det_curr: 0.564227,   pi_det_prop*: 0.537608,  chi_grp[1]_curr: 141.485849,  chi_grp[1]_prop*: 154.272087,  chi_grp[2]_curr: 1957.672340,  chi_grp[2]_prop*: 2054.080789,
+      
+INFO [2019-08-29 15:46:22] Iteration: 15,  proposed_phi[1]: 147.862110,  proposed_phi[2]: 1409.999876,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -1.720935, log_icu_prior_term: -0.000002,  log_sev_prior_term: 4.161738, log_sev_prob: -169.505398, log_alpha: -167.064597.
+INFO [2019-08-29 15:46:22] Iteration: 15,   pi_det_curr: 0.537608,   pi_det_prop*: 0.566677,  chi_grp[1]_curr: 154.272087,  chi_grp[1]_prop*: 140.405990,  chi_grp[2]_curr: 2054.080789,  chi_grp[2]_prop*: 2031.998588,
+      
+INFO [2019-08-29 15:46:24] Iteration: 16,  proposed_phi[1]: 106.124275,  proposed_phi[2]: 1415.364135,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.250130, log_icu_prior_term: -0.000002,  log_sev_prior_term: 0.528204, log_sev_prob: -82.589954, log_alpha: -82.311882.
+INFO [2019-08-29 15:46:24] Iteration: 16,   pi_det_curr: 0.566677,   pi_det_prop*: 0.507604,  chi_grp[1]_curr: 140.405990,  chi_grp[1]_prop*: 149.756901,  chi_grp[2]_curr: 2031.998588,  chi_grp[2]_prop*: 2280.079274,
+      
+INFO [2019-08-29 15:46:26] Iteration: 17,  proposed_phi[1]: 94.685402,  proposed_phi[2]: 902.905901,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.705487, log_icu_prior_term: 0.000001,  log_sev_prior_term: 1.422574, log_sev_prob: -59.640475, log_alpha: -58.923386.
+INFO [2019-08-29 15:46:26] Iteration: 17,   pi_det_curr: 0.507604,   pi_det_prop*: 0.504846,  chi_grp[1]_curr: 149.756901,  chi_grp[1]_prop*: 175.485432,  chi_grp[2]_curr: 2280.079274,  chi_grp[2]_prop*: 2216.499975,
+      
+INFO [2019-08-29 15:46:28] Iteration: 18,  proposed_phi[1]: 96.708124,  proposed_phi[2]: 1280.104054,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.096735, log_icu_prior_term: -0.000001,  log_sev_prior_term: 0.201204, log_sev_prob: -23.962472, log_alpha: -23.858003.
+INFO [2019-08-29 15:46:28] Iteration: 18,   pi_det_curr: 0.504846,   pi_det_prop*: 0.564556,  chi_grp[1]_curr: 175.485432,  chi_grp[1]_prop*: 137.931020,  chi_grp[2]_curr: 2216.499975,  chi_grp[2]_prop*: 1954.534833,
+      
+INFO [2019-08-29 15:46:30] Iteration: 19,  proposed_phi[1]: 114.450583,  proposed_phi[2]: 1309.575375,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -0.561165, log_icu_prior_term: -0.000001,  log_sev_prior_term: 1.150910, log_sev_prob: -68.577904, log_alpha: -67.988160.
+INFO [2019-08-29 15:46:30] Iteration: 19,   pi_det_curr: 0.564556,   pi_det_prop*: 0.568660,  chi_grp[1]_curr: 137.931020,  chi_grp[1]_prop*: 149.894681,  chi_grp[2]_curr: 1954.534833,  chi_grp[2]_prop*: 1933.997546,
+      
+INFO [2019-08-29 15:46:32] Iteration: 20,  proposed_phi[1]: 76.924926,  proposed_phi[2]: 1195.366563,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: 0.145606, log_icu_prior_term: -0.000000,  log_sev_prior_term: -0.284277, log_sev_prob: -10.515085, log_alpha: -10.653756.
+INFO [2019-08-29 15:46:32] Iteration: 20,   pi_det_curr: 0.568660,   pi_det_prop*: 0.495134,  chi_grp[1]_curr: 149.894681,  chi_grp[1]_prop*: 172.011287,  chi_grp[2]_curr: 1933.997546,  chi_grp[2]_prop*: 2213.845936,
+      
+INFO [2019-08-29 15:46:32] Iteration: 20
+INFO [2019-08-29 15:46:33] Iteration: 21,  proposed_phi[1]: 133.914464,  proposed_phi[2]: 1013.059408,  current_phi[1]: 83.053769,  current_phi[2]: 1111.582763,  log_pooled_prior_term: -1.906396, log_icu_prior_term: 0.000000,  log_sev_prior_term: 3.886683, log_sev_prob: -36.149817, log_alpha: -34.169530.
+INFO [2019-08-29 15:46:34] Iteration: 21,   pi_det_curr: 0.495134,   pi_det_prop*: 0.472622,  chi_grp[1]_curr: 172.011287,  chi_grp[1]_prop*: 190.088543,  chi_grp[2]_curr: 2213.845936,  chi_grp[2]_prop*: 2374.863982,
+      
+Thu 29 Aug 15:46:59 2019 : Something is very wrong here, the log sev prob should not be that low. Something is either wrong with that stan model or with the parameters / data i'm passing it.

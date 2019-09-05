@@ -32,9 +32,26 @@ Non-invertible link function makes the ICU model a clear choice for stage one.
 
 ## Origins of the models
 
+Reading the original paper.
+
 ### ICU
 
+Section 5.2 of the main paper, seems to mostly be in the supplementary material though?
+
+
 ### Severity
+
+Simplification of an evidence synthesis model.
+There are seven age groups, each with population sizes.
+These are all wave specific, as their were three waves of influenza in the 2009 H1N1 pandemic.
+There are 5 severities for infections.
+Each age group population, for each wave, has a number of new infections at the 5 severity levels.
+These infections are cumulative, such that for a specific age group and specific wave, the number of new infections at the second mode sever level is the sum of the infections a the first level plus the ones at the second level. 
+  - They aren't cumulative over time as well? I guess people get better don't they.
+
+This severity model can be used to answer questions such as "how many people get hospitalised/admitted to the ICU (i.e. hit a certain severity) in a certain wave, for (all/a particular age group)".
+
+Supplementary material says our parameter of interest for melding is $N_{3, a, I}$, which are the third wave admissions for age group $a$ at severity level $I$ (ICU admission). 
 
 ## How best to join? 
 
@@ -85,23 +102,113 @@ We use a grid of values for $\phi_{1}$ and $\phi_{2}$ based on taking 10 equally
 
 ### With `wsre`
 
-$\phi$ trace:
 
-```{r phi_trace_wsre, fig.cap = "$\\phi$ trace"}
-knitr::include_graphics("plots/stage-two-wsre-phi-trace.pdf")
+### Chains 
+
+```{r phi_trace_wsre, fig.cap = "$\\phi$ trace "}
+knitr::include_graphics("plots/stage-two-wsre-phi-trace-stuck-two.pdf")
 ```
 
 $\psi_{2}$ trace:
 
-```{r theta_tr}
-knitr::include_graphics("plots/stage-two-wsre-theta-trace.pdf")
+```{r psi_trace, fig.cap = "$\\psi_{2}$ trace "}
+knitr::include_graphics("plots/stage-two-wsre-psi-trace-stuck-two.pdf")
 ```
 
-<!-- TODO: Change theta to phi
- -->
-
 Something is blowing up and pining the $\psi_{2}$ traces to 1 or 0.
-This is a numerical instability, I think its why Rob wrote the numerically stable continuous extension to the binomial? This must be an issue inside the `lgamma` function or the like
+This is a numerical instability, I think its why Rob wrote the numerically stable continuous extension to the binomial? This must be an issue inside the `lgamma` function or the like.
+
+```
+INFO [2019-08-29 10:37:32] Iteration: 92,   
+  pi_det_curr: 0.468302,   
+  pi_det_prop*: 0.699601  
+  chi_grp[1]_curr: 213.897938,  
+  chi_grp[1]_prop*: 233.885737,  
+  chi_grp[2]_curr: 2117.363224,  
+  chi_grp[2]_prop*: 1568.307326,
+
+INFO [2019-08-29 10:37:34] Iteration: 93,
+  proposed_phi[1]: 159.724211,  proposed_phi[2]: 1262.438645,
+  current_phi[1]: 91.424532,  current_phi[2]: 1219.395636,
+  log_pooled_prior_term: -2.271681,
+  log_icu_prior_term: -0.000001,  
+  log_sev_prior_term: 5.058097, 
+  log_sev_prob: 26.643150, 
+  log_alpha: 29.429565.
+
+INFO [2019-08-29 10:37:34] Iteration: 93,
+  pi_det_curr: 0.699601
+  pi_det_prop*: 0.575780  
+  chi_grp[1]_curr: 233.885737
+  chi_grp[1]_prop*: 181.190329
+  chi_grp[2]_curr: 1568.307326
+  chi_grp[2]_prop*: 2028.015430
+
+INFO [2019-08-29 10:37:36] Iteration: 94,
+  proposed_phi[1]: 100.965402,  proposed_phi[2]: 1397.159137,
+  current_phi[1]: 159.724211,  current_phi[2]: 1262.438645,
+  log_pooled_prior_term: 2.435806,
+  log_icu_prior_term: -0.000000,  
+  log_sev_prior_term: -4.705567, 
+  log_sev_prob: -4.442096, 
+  log_alpha: -6.711857.
+
+INFO [2019-08-29 10:37:36] Iteration: 94,
+  pi_det_curr: 0.575780,
+  pi_det_prop*: 0.692103  
+  chi_grp[1]_curr: 181.190329,  
+  chi_grp[1]_prop*: 142.054521,  
+  chi_grp[2]_curr: 2028.015430,  
+  chi_grp[2]_prop*: 2222.514998,
+
+INFO [2019-08-29 10:37:38] Iteration: 95,
+  proposed_phi[1]: 115.642500,  proposed_phi[2]: 1237.096530,
+  current_phi[1]: 159.724211,  current_phi[2]: 1262.438645,
+  log_pooled_prior_term: 1.855619,
+  log_icu_prior_term: 0.000000,  
+  log_sev_prior_term: -3.649947, 
+  log_sev_prob: 73.035322, 
+  log_alpha: 71.240994.
+
+INFO [2019-08-29 10:37:39] Iteration: 95,
+  pi_det_curr: 0.692103, 
+  pi_det_prop*: 1.000000  
+  chi_grp[1]_curr: 142.054521,  
+  chi_grp[1]_prop*: 34.425910,  
+  chi_grp[2]_curr: 2222.514998,  
+  chi_grp[2]_prop*: 4.509630,
+```
+
+I think this instability occurs because I am not enforcing that $\phi_{a} < \chi_{a}$.
+Let us enforce this constraint and try again.
+
+## With constraint
+
+```{r phi_trace_new, fig.cap = "new $\\phi$ trace - looks better, just that it will take a very long time to mix."}
+knitr::include_graphics("plots/stage-two-wsre-phi-trace.pdf")
+```
+
+```{r psi_trace_new, fig.cap = "new $\\psi$ trace - looks better"}
+knitr::include_graphics("plots/stage-two-wsre-psi-trace.pdf")
+```
+
+These look like they might mix, but this takes way too long?
+Checking the evaluation times:
+
+|Evaluation time (ms)|        Min|          Lq|        Mean|      Median|         Uq|        Max| Neval|
+|:-------------------|----------:|-----------:|-----------:|-----------:|----------:|----------:|-----:|
+|Pooled Prior        | 711903.503| 814219.6505| 872479.1858| 858421.2330| 891967.443| 2027122.36|   100|
+|ICU Marginal        | 120447.290| 170980.5430| 205826.4051| 194667.4105| 215049.231|  710914.34|   100|
+|Severity Marginal   | 592396.617| 644652.0000| 680230.9956| 666075.4520| 695234.646| 1784080.49|   100|
+|Severity Posterior  |    125.372|    338.5715|    803.4843|    666.8855|    769.018|   15684.96|   100|
+
+Currently it takes 30secs per 5 iterations, and we can run 6 chains in parallel on my laptop.
+The burn-in time is minimal (to my knowledge). 
+I currently have 2.5 hours, which is 60 * 2.5 150 minutes, hence I could ask for 300 iterations. 
+I'll run 250 to be safe, and do a longer run at some point in the future? 
+This actually only took a bit less than half an hour, so I could do 500 iterations per hour.
+If this moves to the HPC, it would be nice to have some kind of checkpointing going on.
+  - This would need to save the chain_id, and current iteration.
 
 # Conclusion
 
