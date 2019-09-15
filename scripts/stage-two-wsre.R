@@ -34,7 +34,9 @@ flog.info("Starting MCMC loop")
 
 # write the loop
 mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
+
   flog.info("Allocating containers")
+  
   phi_samples <- array(
     NA,
     dim = c(n_stage_two_mcmc + 1, 1, 2),
@@ -54,6 +56,7 @@ mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
       c("pi_det", "chi_grp_1", "chi_grp_2")
     )
   )
+  
   accepted_stage_one_indices <- array(
     NA, 
     dim = c(n_stage_two_mcmc + 1, 1, 1),
@@ -65,7 +68,10 @@ mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
   )
 
   # initialize
-  accepted_stage_one_indices[1, 1 : 1, 1] <- sample(seq_len(nrow(icu_phi_samples)), size = 1)
+  accepted_stage_one_indices[1, 1 : 1, 1] <- sample(
+    seq_len(nrow(icu_phi_samples)), 
+    size = 1
+  )
                                                 
   phi_samples[1, 1 : 1, ] <- icu_phi_samples[
     accepted_stage_one_indices[1, 1 : 1, 1],
