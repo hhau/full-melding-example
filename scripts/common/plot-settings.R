@@ -1,8 +1,17 @@
 library(ggplot2)
+library(bayesplot)
 
 # Theme settings
 theme_set(theme_classic())
 theme_replace(
+  panel.grid.major = element_line(),
+  panel.grid.minor = element_line(linetype = "dashed", size = rel(2/3)),
+  legend.text = element_text(size = rel(1.1)),
+  legend.title = element_text(size = rel(1.1))
+)
+
+bayesplot_theme_set(theme_classic())
+bayesplot_theme_replace(
   panel.grid.major = element_line(),
   panel.grid.minor = element_line(linetype = "dashed", size = rel(2/3)),
   legend.text = element_text(size = rel(1.1)),

@@ -32,12 +32,22 @@ Non-invertible link function makes the ICU model a clear choice for stage one.
 
 ## Origins of the models
 
-Reading the original paper.
+- the models considered in @goudie:etal:18 are summaries of the more detailed evidence synthesis models developed by @presanis:etal:14. 
+- There is a model for the prevalence of H1N1 influenza amongst patients in the intensive care units (ICU) of all hospitals in England.
+- One aspect of this model is the cumulative number of ICU admissions over the time period of interest.
+- This functions as the link parameter $\phi$ for the purposes of Markov melding.
+- The second model exists as the data used to develop the first model only exists for a fraction of the third wave of the H1N1.
+- Again, it is a simplified version of the severity model developed in @presanis:etal:14.
+- It more directly informs $\phi$ (cumulated confirmed new admissions)
 
 ### ICU
 
 Section 5.2 of the main paper, seems to mostly be in the supplementary material though?
 
+- what is the goal of the original ev-synth? 
+  - Understanding the development of the pandemic?
+  - Forecasting hospitalisations?
+- How doe ev synth help here?
 
 ### Severity
 
@@ -53,9 +63,15 @@ This severity model can be used to answer questions such as "how many people get
 
 Supplementary material says our parameter of interest for melding is $N_{3, a, I}$, which are the third wave admissions for age group $a$ at severity level $I$ (ICU admission). 
 
-## How best to join? 
+## Relation to wsre 
 
-Don't know if this is necessarily a paragraph/section.
+- Don't know if this is necessarily a paragraph/section?
+- Melding is a more general version of ev synth.
+- This example is another situation where the common parameter has an unknown prior marginal distribution.
+- due to the differences information sources, the distributions (prior and posterior) for the melding parameter differ in scale.
+  - this is because the ICU data is information rich, and is able to inform a complex model that uses uninformative priors
+  - The severity model is information poor (in some sense), it informs a much simpler model.
+- in this particular setting this results in differences in location and scale of the various melding intermediary distributions, which affect the melded posterior.
 
 ## Model ordering
 
@@ -95,8 +111,12 @@ We use a grid of values for $\phi_{1}$ and $\phi_{2}$ based on taking 10 equally
 
 ## Pooled priors
 
-- Eventually I would like to compare linear / log pooling.
+<!-- - Eventually I would like to compare linear / log pooling.
     - It's an easy, drop in replacement.
+ -->
+- We use log pooling with equal weights, with $\lambda_{1} = \lambda_{2} = 1 \mathop{/}2$
+- Log pooling results in a more dilute prior distribution that linear pooling, and this also allows us to emphasise the impact that `wsre` has on the melded posterior.
+
 
 ## Compare the melded output with/without wsre
 
@@ -209,6 +229,16 @@ I'll run 250 to be safe, and do a longer run at some point in the future?
 This actually only took a bit less than half an hour, so I could do 500 iterations per hour.
 If this moves to the HPC, it would be nice to have some kind of checkpointing going on.
   - This would need to save the chain_id, and current iteration.
+
+\newpage
+
+# HPC strategy
+
+- Safety factor it at 450 iterations per hour.
+-  to 6 cores and run `r round(32 / 6)` chains.
+- This means we can run `r 30 * 450` iterations per job, with a 2 hour buffer
+  - Assuming we request the maximum time length.
+
 
 # Conclusion
 

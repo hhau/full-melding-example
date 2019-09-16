@@ -20,7 +20,8 @@ sev_prior_samples <- readRDS(
 
 flog.info("Plotting prior samples")
 
-n_plot_samples <- 50000
+n_plot_samples <- min(50000, dim(icu_phi_samples)[1], dim(sev_prior_samples)[1])
+
 plot_tbl <- tibble(
   x = c(
     sev_prior_samples[1 : n_plot_samples, 1],

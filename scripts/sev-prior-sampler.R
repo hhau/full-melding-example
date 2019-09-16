@@ -1,5 +1,8 @@
+source("scripts/common/plot-settings.R")
+
 library(rstan)
 library(futile.logger)
+library(bayesplot)
 
 flog.info("Compiling basic severity prior Stan model")
 
@@ -21,20 +24,34 @@ generate_sub_init <- function() {
   )
 }
 
-
-init_list <- lapply(1 : 6, function(x) generate_sub_init())
+init_list <- lapply(1 : 5, function(x) generate_sub_init())
 
 model_fit <- sampling(
   prefit,
-  cores = 6,
-  chains = 6,
-  iter = 4000 + (50000/6 + 2),
+  cores = 5,
+  chains = 5,
+  iter = 4000 + (50000/5 + 2),
   warmup = 4000,
   control = list(adapt_delta = 0.99, max_treedepth = 12),
   init = init_list
 )
 
-sev_prior_samples <- extract(model_fit, pars = "x")
+unperm_sev_prior_samples <- extract(model_fit, pars = "x", permuted = FALSE)
+sev_prior_samples <- extract(model_fit, pars = "x", permuted = TRUE)
+
+bayesplot_theme_set(theme_classic())
+bayesplot_theme_replace(
+  panel.grid.major = element_line(),
+  panel.grid.minor = element_line(linetype = "dashed", size = rel(2/3)),
+  legend.text = element_text(size = rel(1.1)),
+  legend.title = element_text(size = rel(1.1))
+)
+sev_prior_check <- bayesplot::mcmc_trace(unperm_sev_prior_samples)
+
+ggsave_halfheight(
+  filename = "plots/sev-prior-chain-check.pdf",
+  sev_prior_check
+)
 
 saveRDS(
   object = sev_prior_samples,

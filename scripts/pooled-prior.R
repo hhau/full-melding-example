@@ -43,21 +43,12 @@ log_linear_pooled_prior <- function(phi_nu, phi_de) {
   return(nu - de)
 }
 
-# test_phi_nu <- c(80, 1200)
-# test_phi_de <- c(110, 1300)
-# log_linear_pooled_prior(test_phi_nu, test_phi_de)
-
-# saveRDS(
-#   object = log_linear_pooled_prior,
-#   file = "rds/log-linear-pooled-prior.rds"
-# )
-
 # for log pooling we should use the wsre for the severity prior.
 # not sure it makes much difference for the icu prior.
 
 sev_prior_wsre <- readRDS("rds/sev-prior-wsre-estimate.rds")
 
-log_log_pooled_prior <- function(phi_nu, phi_de) {
+log_log_pooled_prior_with_wsre <- function(phi_nu, phi_de) {
   0.5 * (
     log(icu_prior_marginal(phi_nu[1], phi_nu[2])) -
     log(icu_prior_marginal(phi_de[1], phi_de[2]))
@@ -70,6 +61,18 @@ log_log_pooled_prior <- function(phi_nu, phi_de) {
     )
   )
 }
+
+log_log_pooled_prior_no_wsre <- function(phi_nu, phi_de) {
+  0.5 * (
+    log(icu_prior_marginal(phi_nu[1], phi_nu[2])) -
+    log(icu_prior_marginal(phi_de[1], phi_de[2]))
+  ) +
+  0.5 * (
+    log(sev_prior_marginal(phi_nu[1], phi_nu[2])) -
+    log(sev_prior_marginal(phi_de[1], phi_de[2]))
+  )
+}
+
 
 # log_log_pooled_prior(test_phi_nu, test_phi_de)
 

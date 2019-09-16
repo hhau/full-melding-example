@@ -96,15 +96,16 @@ mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
     
     # see if we accept that phi
     # this will involve the pooled priors, and __both__ prior marginals.
-    log_pooled_prior_term <- log_log_pooled_prior_with_wsre(proposed_phi, current_phi)
+    log_pooled_prior_term <- log_log_pooled_prior_no_wsre(proposed_phi, current_phi)
     
     # this one is upside down because its a marginalised out
-    log_icu_prior_term <- log(icu_prior_marginal(current_phi[1], current_phi[2])) - 
+    log_icu_prior_term <- 
+      log(icu_prior_marginal(current_phi[1], current_phi[2])) - 
       log(icu_prior_marginal(proposed_phi[1], proposed_phi[2]))
     
-    log_sev_prior_term <- log(
-      evaluate(sev_prior_wsre, x_nu = current_phi, x_de = proposed_phi)
-    )
+    log_sev_prior_term <- 
+      log(sev_prior_marginal(current_phi[1], current_phi[2])) - 
+      log(sev_prior_marginal(proposed_phi[1], proposed_phi[i[2]))
     
     if ((proposed_phi[1] < psi_samples[ii - 1, 1, 2]) && (proposed_phi[2] < psi_samples[ii - 1, 1, 3])) {
       log_sev_prob <- log_prob(
@@ -228,15 +229,15 @@ flog.info("Writing samples to disk")
 
 saveRDS(
   object = accepted_stage_one_indices,
-  file = "rds/wsre-stage-two-stage-one-indices.rds"
+  file = "rds/no-wsre-stage-two-stage-one-indices.rds"
 )
 
 saveRDS(
   object = phi_samples,
-  file = "rds/wsre-stage-two-phi-samples.rds"
+  file = "rds/no-wsre-stage-two-phi-samples.rds"
 )
 
 saveRDS(
   object = psi_samples,
-  file = "rds/wsre-stage-two-psi-samples.rds"
+  file = "rds/no-wsre-stage-two-psi-samples.rds"
 )

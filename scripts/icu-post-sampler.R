@@ -16,15 +16,17 @@ load_from_file <- function(file){
 
 dat <- load_from_file(data_file)
 inits1 <- load_from_file(inits1_file)
+inits2 <- load_from_file(inits2_file)
+inits3 <- load_from_file(inits3_file)
 
 flog.info("Warming up ICU model (Posterior)")
 
 jags <- jags.model(
   model_file,
   data = dat,
-  inits = list(inits1),
-  n.chains = 1,
-  n.adapt = 10000
+  inits = list(inits1, inits2, inits3),
+  n.chains = 3,
+  n.adapt = 1000
 )
 
 monitor <- c(
@@ -39,7 +41,7 @@ icu_post_samples <- coda.samples(
   model = jags,
   variable.names = monitor,
   n.iter = 50000,
-  thin = 1
+  thin = 10
 )
 
 flog.info("Saving ICU samples to disk (Posterior)")

@@ -38,3 +38,5 @@ TODO: This really needs to be faster
     - I know the log pooled_prior term is slow, as is the log_sev_prior term. The `wsre` bit takes a long time to evaluate. Not sure I can speed that up?
   - Am I comparing this vs not doing the `wsre`? That also needs to be a comparison
   - Final plots of phi / psi_{2}? I can go back and filter psi_{1} if I wanted too as well I guess.
+
+# I made a trivial edit on the hpc - lets see if rsync pulls it back

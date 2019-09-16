@@ -1,0 +1,1569 @@
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages("devtools", dependencies = TRUE)
+Warning in install.packages("devtools", dependencies = TRUE) :
+  'lib = "/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/library"' is not writable
+Would you like to use a personal library instead? (yes/No/cancel) yes
+Would you like to create a personal library
+‘~/R/x86_64-pc-linux-gnu-library/3.6’
+to install packages into? (yes/No/cancel) yes
+--- Please select a CRAN mirror for use in this session ---
+Secure CRAN mirrors 
+
+ 1: 0-Cloud [https]                   2: Algeria [https]                
+ 3: Australia (Canberra) [https]      4: Australia (Melbourne 1) [https]
+ 5: Australia (Melbourne 2) [https]   6: Australia (Perth) [https]      
+ 7: Austria [https]                   8: Belgium (Ghent) [https]        
+ 9: Brazil (PR) [https]              10: Brazil (RJ) [https]            
+11: Brazil (SP 1) [https]            12: Brazil (SP 2) [https]          
+13: Bulgaria [https]                 14: Chile [https]                  
+15: China (Hong Kong) [https]        16: China (Lanzhou) [https]        
+17: China (Shanghai) [https]         18: Colombia (Cali) [https]        
+19: Czech Republic [https]           20: Denmark [https]                
+21: Ecuador (Cuenca) [https]         22: Ecuador (Quito) [https]        
+23: Estonia [https]                  24: France (Lyon 1) [https]        
+25: France (Lyon 2) [https]          26: France (Marseille) [https]     
+27: France (Montpellier) [https]     28: Germany (Erlangen) [https]     
+29: Germany (Göttingen) [https]      30: Germany (Münster) [https]      
+31: Germany (Regensburg) [https]     32: Greece [https]                 
+33: Hungary [https]                  34: Iceland [https]                
+35: Indonesia (Jakarta) [https]      36: Italy (Padua) [https]          
+37: Japan (Tokyo) [https]            38: Japan (Yonezawa) [https]       
+39: Korea (Busan) [https]            40: Korea (Gyeongsan-si) [https]   
+41: Korea (Seoul 1) [https]          42: Korea (Ulsan) [https]          
+43: Malaysia [https]                 44: Mexico (Mexico City) [https]   
+45: Morocco [https]                  46: Norway [https]                 
+47: Philippines [https]              48: Serbia [https]                 
+49: Spain (Madrid) [https]           50: Sweden [https]                 
+51: Switzerland [https]              52: Turkey (Denizli) [https]       
+53: Turkey (Mersin) [https]          54: UK (Bristol) [https]           
+55: UK (London 1) [https]            56: USA (CA 1) [https]             
+57: USA (IA) [https]                 58: USA (KS) [https]               
+59: USA (MI 1) [https]               60: USA (MI 2) [https]             
+61: USA (OR) [https]                 62: USA (TN) [https]               
+63: USA (TX 1) [https]               64: Uruguay [https]                
+65: (other mirrors)                  
+
+Selection: 0
+Error in contrib.url(repos, type) : 
+  trying to use CRAN without setting a mirror
+> install.packages("devtools", dependencies = TRUE)
+Installing package into ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6’
+(as ‘lib’ is unspecified)
+--- Please select a CRAN mirror for use in this session ---
+Secure CRAN mirrors 
+
+ 1: 0-Cloud [https]                   2: Algeria [https]                
+ 3: Australia (Canberra) [https]      4: Australia (Melbourne 1) [https]
+ 5: Australia (Melbourne 2) [https]   6: Australia (Perth) [https]      
+ 7: Austria [https]                   8: Belgium (Ghent) [https]        
+ 9: Brazil (PR) [https]              10: Brazil (RJ) [https]            
+11: Brazil (SP 1) [https]            12: Brazil (SP 2) [https]          
+13: Bulgaria [https]                 14: Chile [https]                  
+15: China (Hong Kong) [https]        16: China (Lanzhou) [https]        
+17: China (Shanghai) [https]         18: Colombia (Cali) [https]        
+19: Czech Republic [https]           20: Denmark [https]                
+21: Ecuador (Cuenca) [https]         22: Ecuador (Quito) [https]        
+23: Estonia [https]                  24: France (Lyon 1) [https]        
+25: France (Lyon 2) [https]          26: France (Marseille) [https]     
+27: France (Montpellier) [https]     28: Germany (Erlangen) [https]     
+29: Germany (Göttingen) [https]      30: Germany (Münster) [https]      
+31: Germany (Regensburg) [https]     32: Greece [https]                 
+33: Hungary [https]                  34: Iceland [https]                
+35: Indonesia (Jakarta) [https]      36: Italy (Padua) [https]          
+37: Japan (Tokyo) [https]            38: Japan (Yonezawa) [https]       
+39: Korea (Busan) [https]            40: Korea (Gyeongsan-si) [https]   
+41: Korea (Seoul 1) [https]          42: Korea (Ulsan) [https]          
+43: Malaysia [https]                 44: Mexico (Mexico City) [https]   
+45: Morocco [https]                  46: Norway [https]                 
+47: Philippines [https]              48: Serbia [https]                 
+49: Spain (Madrid) [https]           50: Sweden [https]                 
+51: Switzerland [https]              52: Turkey (Denizli) [https]       
+53: Turkey (Mersin) [https]          54: UK (Bristol) [https]           
+55: UK (London 1) [https]            56: USA (CA 1) [https]             
+57: USA (IA) [https]                 58: USA (KS) [https]               
+59: USA (MI 1) [https]               60: USA (MI 2) [https]             
+61: USA (OR) [https]                 62: USA (TN) [https]               
+63: USA (TX 1) [https]               64: Uruguay [https]                
+65: (other mirrors)                  
+
+Selection: 1
+also installing the dependencies ‘colorspace’, ‘plyr’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘httpuv’, ‘xtable’, ‘sourcetools’, ‘gtable’, ‘reshape2’, ‘scales’, ‘viridisLite’, ‘BH’, ‘sys’, ‘zeallot’, ‘ini’, ‘backports’, ‘ps’, ‘lazyeval’, ‘shiny’, ‘ggplot2’, ‘later’, ‘askpass’, ‘selectr’, ‘pkgconfig’, ‘utf8’, ‘vctrs’, ‘clipr’, ‘clisymbols’, ‘fs’, ‘gh’, ‘purrr’, ‘rlang’, ‘rprojroot’, ‘yaml’, ‘processx’, ‘R6’, ‘assertthat’, ‘rex’, ‘htmltools’, ‘htmlwidgets’, ‘magrittr’, ‘crosstalk’, ‘promises’, ‘mime’, ‘openssl’, ‘prettyunits’, ‘xopen’, ‘brew’, ‘commonmark’, ‘stringi’, ‘stringr’, ‘xml2’, ‘praise’, ‘rvest’, ‘tibble’, ‘base64enc’, ‘gargle’, ‘lifecycle’, ‘rematch2’, ‘highr’, ‘markdown’, ‘xfun’, ‘stringdist’, ‘igraph’, ‘fansi’, ‘highlight’, ‘parsedate’, ‘pillar’, ‘rappdirs’, ‘rematch’, ‘uuid’, ‘whoami’, ‘tinytex’, ‘hunspell’, ‘usethis’, ‘callr’, ‘cli’, ‘covr’, ‘crayon’, ‘desc’, ‘digest’, ‘DT’, ‘ellipsis’, ‘glue’, ‘git2r’, ‘httr’, ‘jsonlite’, ‘memoise’, ‘pkgbuild’, ‘pkgload’, ‘rcmdcheck’, ‘remotes’, ‘roxygen2’, ‘rstudioapi’, ‘rversions’, ‘sessioninfo’, ‘testthat’, ‘withr’, ‘BiocManager’, ‘bitops’, ‘curl’, ‘evaluate’, ‘foghorn’, ‘gmailr’, ‘knitr’, ‘lintr’, ‘mockery’, ‘pingr’, ‘pkgdown’, ‘Rcpp’, ‘rhub’, ‘rmarkdown’, ‘spelling’, ‘whisker’
+
+trying URL 'https://cloud.r-project.org/src/contrib/colorspace_1.4-1.tar.gz'
+Content type 'application/x-gzip' length 2152594 bytes (2.1 MB)
+==================================================
+downloaded 2.1 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/plyr_1.8.4.tar.gz'
+Content type 'application/x-gzip' length 392451 bytes (383 KB)
+==================================================
+downloaded 383 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/labeling_0.3.tar.gz'
+Content type 'application/x-gzip' length 10722 bytes (10 KB)
+==================================================
+downloaded 10 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/munsell_0.5.0.tar.gz'
+Content type 'application/x-gzip' length 182653 bytes (178 KB)
+==================================================
+downloaded 178 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/RColorBrewer_1.1-2.tar.gz'
+Content type 'application/x-gzip' length 11532 bytes (11 KB)
+==================================================
+downloaded 11 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/httpuv_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 1763900 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/xtable_1.8-4.tar.gz'
+Content type 'application/x-gzip' length 564589 bytes (551 KB)
+==================================================
+downloaded 551 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/sourcetools_0.1.7.tar.gz'
+Content type 'application/x-gzip' length 24155 bytes (23 KB)
+==================================================
+downloaded 23 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/gtable_0.3.0.tar.gz'
+Content type 'application/x-gzip' length 368081 bytes (359 KB)
+==================================================
+downloaded 359 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/reshape2_1.4.3.tar.gz'
+Content type 'application/x-gzip' length 36405 bytes (35 KB)
+==================================================
+downloaded 35 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/scales_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 299262 bytes (292 KB)
+==================================================
+downloaded 292 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/viridisLite_0.3.0.tar.gz'
+Content type 'application/x-gzip' length 44019 bytes (42 KB)
+==================================================
+downloaded 42 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/BH_1.69.0-1.tar.gz'
+Content type 'application/x-gzip' length 12378154 bytes (11.8 MB)
+==================================================
+downloaded 11.8 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/sys_3.3.tar.gz'
+Content type 'application/x-gzip' length 20225 bytes (19 KB)
+==================================================
+downloaded 19 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/zeallot_0.1.0.tar.gz'
+Content type 'application/x-gzip' length 32549 bytes (31 KB)
+==================================================
+downloaded 31 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/ini_0.3.1.tar.gz'
+Content type 'application/x-gzip' length 3488 bytes
+==================================================
+downloaded 3488 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/backports_1.1.4.tar.gz'
+Content type 'application/x-gzip' length 13859 bytes (13 KB)
+==================================================
+downloaded 13 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/ps_1.3.0.tar.gz'
+Content type 'application/x-gzip' length 261887 bytes (255 KB)
+==================================================
+downloaded 255 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/lazyeval_0.2.2.tar.gz'
+Content type 'application/x-gzip' length 83482 bytes (81 KB)
+==================================================
+downloaded 81 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/shiny_1.3.2.tar.gz'
+Content type 'application/x-gzip' length 2991469 bytes (2.9 MB)
+==================================================
+downloaded 2.9 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/ggplot2_3.2.1.tar.gz'
+Content type 'application/x-gzip' length 3204655 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/later_0.8.0.tar.gz'
+Content type 'application/x-gzip' length 40293 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/askpass_1.1.tar.gz'
+Content type 'application/x-gzip' length 5730 bytes
+==================================================
+downloaded 5730 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/selectr_0.4-1.tar.gz'
+Content type 'application/x-gzip' length 42971 bytes (41 KB)
+==================================================
+downloaded 41 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/pkgconfig_2.0.2.tar.gz'
+Content type 'application/x-gzip' length 6024 bytes
+==================================================
+downloaded 6024 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/utf8_1.1.4.tar.gz'
+Content type 'application/x-gzip' length 218882 bytes (213 KB)
+==================================================
+downloaded 213 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/vctrs_0.2.0.tar.gz'
+Content type 'application/x-gzip' length 668258 bytes (652 KB)
+==================================================
+downloaded 652 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/clipr_0.7.0.tar.gz'
+Content type 'application/x-gzip' length 20381 bytes (19 KB)
+==================================================
+downloaded 19 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/clisymbols_1.2.0.tar.gz'
+Content type 'application/x-gzip' length 9666 bytes
+==================================================
+downloaded 9666 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/fs_1.3.1.tar.gz'
+Content type 'application/x-gzip' length 812680 bytes (793 KB)
+==================================================
+downloaded 793 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/gh_1.0.1.tar.gz'
+Content type 'application/x-gzip' length 15513 bytes (15 KB)
+==================================================
+downloaded 15 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/purrr_0.3.2.tar.gz'
+Content type 'application/x-gzip' length 373701 bytes (364 KB)
+==================================================
+downloaded 364 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rlang_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 859737 bytes (839 KB)
+==================================================
+downloaded 839 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rprojroot_1.3-2.tar.gz'
+Content type 'application/x-gzip' length 50414 bytes (49 KB)
+==================================================
+downloaded 49 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/yaml_2.2.0.tar.gz'
+Content type 'application/x-gzip' length 89447 bytes (87 KB)
+==================================================
+downloaded 87 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/processx_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 123430 bytes (120 KB)
+==================================================
+downloaded 120 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/R6_2.4.0.tar.gz'
+Content type 'application/x-gzip' length 31545 bytes (30 KB)
+==================================================
+downloaded 30 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/assertthat_0.2.1.tar.gz'
+Content type 'application/x-gzip' length 12742 bytes (12 KB)
+==================================================
+downloaded 12 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rex_1.1.2.tar.gz'
+Content type 'application/x-gzip' length 89430 bytes (87 KB)
+==================================================
+downloaded 87 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/htmltools_0.3.6.tar.gz'
+Content type 'application/x-gzip' length 45408 bytes (44 KB)
+==================================================
+downloaded 44 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/htmlwidgets_1.3.tar.gz'
+Content type 'application/x-gzip' length 866548 bytes (846 KB)
+==================================================
+downloaded 846 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/magrittr_1.5.tar.gz'
+Content type 'application/x-gzip' length 200504 bytes (195 KB)
+==================================================
+downloaded 195 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/crosstalk_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 563474 bytes (550 KB)
+==================================================
+downloaded 550 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/promises_1.0.1.tar.gz'
+Content type 'application/x-gzip' length 106866 bytes (104 KB)
+==================================================
+downloaded 104 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/mime_0.7.tar.gz'
+Content type 'application/x-gzip' length 13130 bytes (12 KB)
+==================================================
+downloaded 12 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/openssl_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 1206885 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/prettyunits_1.0.2.tar.gz'
+Content type 'application/x-gzip' length 8262 bytes
+==================================================
+downloaded 8262 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/xopen_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 11221 bytes (10 KB)
+==================================================
+downloaded 10 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/brew_1.0-6.tar.gz'
+Content type 'application/x-gzip' length 83315 bytes (81 KB)
+==================================================
+downloaded 81 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/commonmark_1.7.tar.gz'
+Content type 'application/x-gzip' length 134002 bytes (130 KB)
+==================================================
+downloaded 130 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/stringi_1.4.3.tar.gz'
+Content type 'application/x-gzip' length 7290890 bytes (7.0 MB)
+==================================================
+downloaded 7.0 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/stringr_1.4.0.tar.gz'
+Content type 'application/x-gzip' length 135777 bytes (132 KB)
+==================================================
+downloaded 132 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/xml2_1.2.2.tar.gz'
+Content type 'application/x-gzip' length 261081 bytes (254 KB)
+==================================================
+downloaded 254 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/praise_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 6100 bytes
+==================================================
+downloaded 6100 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/rvest_0.3.4.tar.gz'
+Content type 'application/x-gzip' length 1631028 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/tibble_2.1.3.tar.gz'
+Content type 'application/x-gzip' length 310774 bytes (303 KB)
+==================================================
+downloaded 303 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/base64enc_0.1-3.tar.gz'
+Content type 'application/x-gzip' length 7833 bytes
+==================================================
+downloaded 7833 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/gargle_0.3.1.tar.gz'
+Content type 'application/x-gzip' length 163707 bytes (159 KB)
+==================================================
+downloaded 159 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/lifecycle_0.1.0.tar.gz'
+Content type 'application/x-gzip' length 150752 bytes (147 KB)
+==================================================
+downloaded 147 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rematch2_2.1.0.tar.gz'
+Content type 'application/x-gzip' length 12744 bytes (12 KB)
+==================================================
+downloaded 12 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/highr_0.8.tar.gz'
+Content type 'application/x-gzip' length 17445 bytes (17 KB)
+==================================================
+downloaded 17 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/markdown_1.1.tar.gz'
+Content type 'application/x-gzip' length 81050 bytes (79 KB)
+==================================================
+downloaded 79 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/xfun_0.9.tar.gz'
+Content type 'application/x-gzip' length 55965 bytes (54 KB)
+==================================================
+downloaded 54 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/stringdist_0.9.5.2.tar.gz'
+Content type 'application/x-gzip' length 829219 bytes (809 KB)
+==================================================
+downloaded 809 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/igraph_1.2.4.1.tar.gz'
+Content type 'application/x-gzip' length 2704004 bytes (2.6 MB)
+==================================================
+downloaded 2.6 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/fansi_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 266123 bytes (259 KB)
+==================================================
+downloaded 259 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/highlight_0.4.7.2.tar.gz'
+Content type 'application/x-gzip' length 357048 bytes (348 KB)
+==================================================
+downloaded 348 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/parsedate_1.2.0.tar.gz'
+Content type 'application/x-gzip' length 19521 bytes (19 KB)
+==================================================
+downloaded 19 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/pillar_1.4.2.tar.gz'
+Content type 'application/x-gzip' length 228815 bytes (223 KB)
+==================================================
+downloaded 223 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rappdirs_0.3.1.tar.gz'
+Content type 'application/x-gzip' length 12838 bytes (12 KB)
+==================================================
+downloaded 12 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rematch_1.0.1.tar.gz'
+Content type 'application/x-gzip' length 3719 bytes
+==================================================
+downloaded 3719 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/uuid_0.1-2.tar.gz'
+Content type 'application/x-gzip' length 46706 bytes (45 KB)
+==================================================
+downloaded 45 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/whoami_1.3.0.tar.gz'
+Content type 'application/x-gzip' length 6929 bytes
+==================================================
+downloaded 6929 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/tinytex_0.15.tar.gz'
+Content type 'application/x-gzip' length 23466 bytes (22 KB)
+==================================================
+downloaded 22 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/hunspell_3.0.tar.gz'
+Content type 'application/x-gzip' length 3220101 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/usethis_1.5.1.tar.gz'
+Content type 'application/x-gzip' length 620225 bytes (605 KB)
+==================================================
+downloaded 605 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/callr_3.3.1.tar.gz'
+Content type 'application/x-gzip' length 94264 bytes (92 KB)
+==================================================
+downloaded 92 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/cli_1.1.0.tar.gz'
+Content type 'application/x-gzip' length 40232 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/covr_3.3.1.tar.gz'
+Content type 'application/x-gzip' length 143868 bytes (140 KB)
+==================================================
+downloaded 140 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/crayon_1.3.4.tar.gz'
+Content type 'application/x-gzip' length 658694 bytes (643 KB)
+==================================================
+downloaded 643 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/desc_1.2.0.tar.gz'
+Content type 'application/x-gzip' length 65612 bytes (64 KB)
+==================================================
+downloaded 64 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/digest_0.6.20.tar.gz'
+Content type 'application/x-gzip' length 135997 bytes (132 KB)
+==================================================
+downloaded 132 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/DT_0.8.tar.gz'
+Content type 'application/x-gzip' length 821419 bytes (802 KB)
+==================================================
+downloaded 802 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/ellipsis_0.2.0.1.tar.gz'
+Content type 'application/x-gzip' length 7045 bytes
+==================================================
+downloaded 7045 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/glue_1.3.1.tar.gz'
+Content type 'application/x-gzip' length 122950 bytes (120 KB)
+==================================================
+downloaded 120 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/git2r_0.26.1.tar.gz'
+Content type 'application/x-gzip' length 1214783 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/httr_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 158465 bytes (154 KB)
+==================================================
+downloaded 154 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/jsonlite_1.6.tar.gz'
+Content type 'application/x-gzip' length 1052728 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/memoise_1.1.0.tar.gz'
+Content type 'application/x-gzip' length 11025 bytes (10 KB)
+==================================================
+downloaded 10 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/pkgbuild_1.0.5.tar.gz'
+Content type 'application/x-gzip' length 29022 bytes (28 KB)
+==================================================
+downloaded 28 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/pkgload_1.0.2.tar.gz'
+Content type 'application/x-gzip' length 55605 bytes (54 KB)
+==================================================
+downloaded 54 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rcmdcheck_1.3.3.tar.gz'
+Content type 'application/x-gzip' length 45380 bytes (44 KB)
+==================================================
+downloaded 44 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/remotes_2.1.0.tar.gz'
+Content type 'application/x-gzip' length 131622 bytes (128 KB)
+==================================================
+downloaded 128 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/roxygen2_6.1.1.tar.gz'
+Content type 'application/x-gzip' length 178346 bytes (174 KB)
+==================================================
+downloaded 174 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rstudioapi_0.10.tar.gz'
+Content type 'application/x-gzip' length 61888 bytes (60 KB)
+==================================================
+downloaded 60 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rversions_2.0.0.tar.gz'
+Content type 'application/x-gzip' length 9722 bytes
+==================================================
+downloaded 9722 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/sessioninfo_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 46027 bytes (44 KB)
+==================================================
+downloaded 44 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/testthat_2.2.1.tar.gz'
+Content type 'application/x-gzip' length 235874 bytes (230 KB)
+==================================================
+downloaded 230 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/withr_2.1.2.tar.gz'
+Content type 'application/x-gzip' length 53578 bytes (52 KB)
+==================================================
+downloaded 52 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/BiocManager_1.30.4.tar.gz'
+Content type 'application/x-gzip' length 242304 bytes (236 KB)
+==================================================
+downloaded 236 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/bitops_1.0-6.tar.gz'
+Content type 'application/x-gzip' length 8734 bytes
+==================================================
+downloaded 8734 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/curl_4.0.tar.gz'
+Content type 'application/x-gzip' length 379180 bytes (370 KB)
+==================================================
+downloaded 370 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/evaluate_0.14.tar.gz'
+Content type 'application/x-gzip' length 24206 bytes (23 KB)
+==================================================
+downloaded 23 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/foghorn_1.1.0.tar.gz'
+Content type 'application/x-gzip' length 41598 bytes (40 KB)
+==================================================
+downloaded 40 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/gmailr_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 301205 bytes (294 KB)
+==================================================
+downloaded 294 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/knitr_1.24.tar.gz'
+Content type 'application/x-gzip' length 882405 bytes (861 KB)
+==================================================
+downloaded 861 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/lintr_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 51034 bytes (49 KB)
+==================================================
+downloaded 49 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/mockery_0.4.2.tar.gz'
+Content type 'application/x-gzip' length 19837 bytes (19 KB)
+==================================================
+downloaded 19 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/pingr_1.1.2.tar.gz'
+Content type 'application/x-gzip' length 6774 bytes
+==================================================
+downloaded 6774 bytes
+
+trying URL 'https://cloud.r-project.org/src/contrib/pkgdown_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 609191 bytes (594 KB)
+==================================================
+downloaded 594 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/Rcpp_1.0.2.tar.gz'
+Content type 'application/x-gzip' length 3699570 bytes (3.5 MB)
+==================================================
+downloaded 3.5 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rhub_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 1690608 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rmarkdown_1.15.tar.gz'
+Content type 'application/x-gzip' length 3174782 bytes (3.0 MB)
+==================================================
+downloaded 3.0 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/spelling_2.1.tar.gz'
+Content type 'application/x-gzip' length 10447 bytes (10 KB)
+==================================================
+downloaded 10 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/whisker_0.4.tar.gz'
+Content type 'application/x-gzip' length 28574 bytes (27 KB)
+==================================================
+downloaded 27 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/devtools_2.2.0.tar.gz'
+Content type 'application/x-gzip' length 370794 bytes (362 KB)
+==================================================
+downloaded 362 KB
+
+* installing *source* package ‘colorspace’ ...
+** package ‘colorspace’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c colorspace.c -o colorspace.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [colorspace.o] Error 1
+ERROR: compilation failed for package ‘colorspace’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/colorspace’
+* installing *source* package ‘labeling’ ...
+** package ‘labeling’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (labeling)
+* installing *source* package ‘RColorBrewer’ ...
+** package ‘RColorBrewer’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (RColorBrewer)
+* installing *source* package ‘xtable’ ...
+** package ‘xtable’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (xtable)
+* installing *source* package ‘sourcetools’ ...
+** package ‘sourcetools’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/g++ -std=gnu++11 -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/include  -fpic  -g -O2  -c Reader.cpp -o Reader.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [Reader.o] Error 1
+ERROR: compilation failed for package ‘sourcetools’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/sourcetools’
+* installing *source* package ‘gtable’ ...
+** package ‘gtable’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gtable)
+* installing *source* package ‘viridisLite’ ...
+** package ‘viridisLite’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (viridisLite)
+* installing *source* package ‘BH’ ...
+** package ‘BH’ successfully unpacked and MD5 sums checked
+** using staged installation
+** inst
+^C^C^A
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/BH’
+* installing *source* package ‘sys’ ...
+** package ‘sys’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c exec.c -o exec.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [exec.o] Error 1
+ERROR: compilation failed for package ‘sys’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/sys’
+* installing *source* package ‘zeallot’ ...
+** package ‘zeallot’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (zeallot)
+* installing *source* package ‘ini’ ...
+** package ‘ini’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ini)
+* installing *source* package ‘backports’ ...
+** package ‘backports’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c dotsElt.c -o dotsElt.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [dotsElt.o] Error 1
+ERROR: compilation failed for package ‘backports’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/backports’
+* installing *source* package ‘ps’ ...
+** package ‘ps’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -g -O2  -Wall px.c -o px
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [px] Error 1
+ERROR: compilation failed for package ‘ps’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/ps’
+* installing *source* package ‘lazyeval’ ...
+** package ‘lazyeval’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c expr.c -o expr.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [expr.o] Error 1
+ERROR: compilation failed for package ‘lazyeval’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/lazyeval’
+* installing *source* package ‘pkgconfig’ ...
+** package ‘pkgconfig’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (pkgconfig)
+* installing *source* package ‘utf8’ ...
+** package ‘utf8’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include -Iutf8lite/src -fpic  -g -O2  -c as_utf8.c -o as_utf8.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [as_utf8.o] Error 1
+ERROR: compilation failed for package ‘utf8’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/utf8’
+* installing *source* package ‘clipr’ ...
+** package ‘clipr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (clipr)
+* installing *source* package ‘clisymbols’ ...
+** package ‘clisymbols’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (clisymbols)
+* installing *source* package ‘rlang’ ...
+** package ‘rlang’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -I./lib/  -I/usr/local/include  -fpic  -g -O2  -c capture.c -o capture.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [capture.o] Error 1
+ERROR: compilation failed for package ‘rlang’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rlang’
+* installing *source* package ‘yaml’ ...
+** package ‘yaml’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -I. -DNDEBUG  -I/usr/local/include  -fpic  -g -O2  -c api.c -o api.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [api.o] Error 1
+ERROR: compilation failed for package ‘yaml’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/yaml’
+* installing *source* package ‘R6’ ...
+** package ‘R6’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (R6)
+* installing *source* package ‘assertthat’ ...
+** package ‘assertthat’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (assertthat)
+* installing *source* package ‘magrittr’ ...
+** package ‘magrittr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (magrittr)
+* installing *source* package ‘mime’ ...
+** package ‘mime’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c init.c -o init.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [init.o] Error 1
+ERROR: compilation failed for package ‘mime’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/mime’
+* installing *source* package ‘brew’ ...
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (brew)
+* installing *source* package ‘commonmark’ ...
+** package ‘commonmark’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+rm -f cmark/cmark.o cmark/node.o cmark/iterator.o cmark/blocks.o cmark/inlines.o cmark/scanners.o cmark/utf8.o cmark/buffer.o cmark/references.o cmark/render.o cmark/man.o cmark/xml.o cmark/html.o cmark/commonmark.o cmark/latex.o cmark/houdini_href_e.o cmark/houdini_html_e.o cmark/houdini_html_u.o cmark/cmark_ctype.o cmark/arena.o cmark/html.o cmark/linked_list.o cmark/plugin.o cmark/registry.o cmark/syntax_extension.o cmark/plaintext.o cmark/footnotes.o cmark/map.o extensions/autolink.o extensions/core-extensions.o extensions/ext_scanners.o extensions/strikethrough.o extensions/table.o extensions/tagfilter.o extensions.o init.o wrapper.o commonmark.so cmark/libstatcmark.a
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -Icmark -I. -DCMARK_GFM_STATIC_DEFINE -DCMARK_GFM_EXTENSIONS_STATIC_DEFINE -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include -fvisibility=hidden -fpic  -g -O2  -c extensions.c -o extensions.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [extensions.o] Error 1
+ERROR: compilation failed for package ‘commonmark’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/commonmark’
+* installing *source* package ‘stringi’ ...
+** package ‘stringi’ successfully unpacked and MD5 sums checked
+** using staged installation
+checking for R_HOME... /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R
+checking for R... /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/bin/R
+checking for endianness... little
+checking for R >= 3.1.0 for C++11 use... yes
+checking for R < 3.4.0 for CXX1X flag use... no
+checking for cat... /usr/bin/cat
+checking for local ICUDT_DIR... icu61/data
+checking for gcc... /usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc
+checking whether the C compiler works... no
+configure: error: in `/tmp/RtmpWp0Mo5/R.INSTALL3995625d1a6a9/stringi':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+ERROR: configuration failed for package ‘stringi’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/stringi’
+* installing *source* package ‘praise’ ...
+** package ‘praise’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (praise)
+* installing *source* package ‘base64enc’ ...
+** package ‘base64enc’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c base64.c -o base64.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [base64.o] Error 1
+ERROR: compilation failed for package ‘base64enc’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/base64enc’
+* installing *source* package ‘highr’ ...
+** package ‘highr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (highr)
+* installing *source* package ‘xfun’ ...
+** package ‘xfun’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (xfun)
+* installing *source* package ‘stringdist’ ...
+** package ‘stringdist’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -I../inst/include  -I/usr/local/include -fopenmp -fpic  -g -O2  -c R_register_native.c -o R_register_native.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [R_register_native.o] Error 1
+ERROR: compilation failed for package ‘stringdist’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/stringdist’
+* installing *source* package ‘fansi’ ...
+** package ‘fansi’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c assumptions.c -o assumptions.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [assumptions.o] Error 1
+ERROR: compilation failed for package ‘fansi’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/fansi’
+* installing *source* package ‘highlight’ ...
+** package ‘highlight’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/g++ -std=gnu++11 -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include -I. -fpic  -g -O2  -c ASBeautifier.cpp -o ASBeautifier.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [ASBeautifier.o] Error 1
+ERROR: compilation failed for package ‘highlight’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/highlight’
+* installing *source* package ‘rappdirs’ ...
+** package ‘rappdirs’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c win-path.c -o win-path.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [win-path.o] Error 1
+ERROR: compilation failed for package ‘rappdirs’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rappdirs’
+* installing *source* package ‘rematch’ ...
+** package ‘rematch’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rematch)
+* installing *source* package ‘uuid’ ...
+** package ‘uuid’ successfully unpacked and MD5 sums checked
+** using staged installation
+checking for gcc... /usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc
+checking whether the C compiler works... no
+configure: error: in `/tmp/Rtmp3V4Z2n/R.INSTALL39b673aa39f0e/uuid':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+ERROR: configuration failed for package ‘uuid’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/uuid’
+* installing *source* package ‘crayon’ ...
+** package ‘crayon’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (crayon)
+* installing *source* package ‘digest’ ...
+** package ‘digest’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/g++ -std=gnu++11 -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c SpookyV2.cpp -o SpookyV2.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [SpookyV2.o] Error 1
+ERROR: compilation failed for package ‘digest’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/digest’
+* installing *source* package ‘glue’ ...
+** package ‘glue’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c glue.c -o glue.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [glue.o] Error 1
+ERROR: compilation failed for package ‘glue’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/glue’
+* installing *source* package ‘git2r’ ...
+** package ‘git2r’ successfully unpacked and MD5 sums checked
+** using staged installation
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+configure: Package dependency requirement 'libgit2 >= 0.26.0' could not be satisfied.
+
+  -----------------------------------------------------------------------
+
+   Unable to find the libgit2 library on this system. Building 'git2r'
+   using the bundled source of the libgit2 library.
+
+   To build git2r with a system installation of libgit2, please install:
+     libgit2-dev   (package on e.g. Debian and Ubuntu)
+     libgit2-devel (package on e.g. Fedora, CentOS and RHEL)
+     libgit2       (Homebrew package on OS X)
+   and try again.
+
+   If the libgit2 library is installed on your system but the git2r
+   configuration is unable to find it, you can specify the include and
+   lib path to libgit2 with:
+
+   given you downloaded a tar-gz archive:
+   R CMD INSTALL git2r-.tar.gz --configure-vars='INCLUDE_DIR=/path/to/include LIB_DIR=/path/to/lib'
+
+   or cloned the GitHub git2r repository into a directory:
+   R CMD INSTALL git2r/ --configure-vars='INCLUDE_DIR=/path/to/include LIB_DIR=/path/to/lib'
+
+   or download and install git2r in R using
+   install.packages('git2r', type='source', configure.vars='LIB_DIR=-L/path/to/libs INCLUDE_DIR=-I/path/to/headers')
+
+   On macOS, another possibility is to let the configuration
+   automatically download the libgit2 library from the Homebrew
+   package manager with:
+
+   R CMD INSTALL git2r-.tar.gz --configure-vars='autobrew=yes'
+   or
+   R CMD INSTALL git2r/ --configure-vars='autobrew=yes'
+   or
+   install.packages('git2r', type='source', configure.vars='autobrew=yes')
+
+  -----------------------------------------------------------------------
+
+
+configure: Attempting configuration of bundled libgit2
+checking size of void*... 8
+checking for library containing inflate... no
+checking for zlib... yes
+checking for library containing EVP_EncryptInit... no
+checking for openssl... yes
+checking for library containing libssh2_version... no
+checking for libssh2... no
+configure: WARNING:
+  ---------------------------------------------
+   Unable to find the LibSSH2 library on this
+   system. Building a version without support
+   for SSH transport.
+
+   To build with SSH support, please install:
+     libssh2-1-dev (package on e.g. Debian and Ubuntu)
+     libssh2-devel (package on e.g. Fedora, CentOS and RHEL)
+     libssh2 (Homebrew package on OS X)
+   and try again.
+
+   If the LibSSH2 library is installed on
+   your system but the git2r configuration
+   is unable to find it, you can specify
+   the include and lib path to LibSSH2 with:
+   R CMD INSTALL git2r --configure-vars='LIBS=-L/path/to/libs CPPFLAGS=-I/path/to/headers'
+  ---------------------------------------------
+checking for ANSI C header files... no
+checking for sys/types.h... no
+checking for sys/stat.h... no
+checking for stdlib.h... no
+checking for string.h... no
+checking for memory.h... no
+checking for strings.h... no
+checking for inttypes.h... no
+checking for stdint.h... no
+checking for unistd.h... no
+checking for struct stat.st_mtim... no
+checking for struct stat.st_mtimespec... no
+checking for struct stat.st_mtime_nsec... no
+checking for futimens... no
+checking for qsort_r... no
+checking for qsort_s... no
+
+  ----- Results of the git2r package configure -----
+
+    HTTPS transport......................: yes
+    LibSSH2 to enable the SSH transport..: no
+
+  --------------------------------------------------
+
+configure: creating ./config.status
+config.status: creating src/Makevars_libgit2
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -I. -Ilibgit2/src -Ilibgit2/include -Ilibgit2/deps/http-parser     -I/usr/local/include -DGIT_ARCH_64 -DGIT_OPENSSL=1 -DGIT_HTTPS=1 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -DLIBGIT2_NO_FEATURES_H -DR_NO_REMAP -DSTRICT_R_HEADERS -DGIT_SHA1_OPENSSL=1 -DGIT_USE_NSEC -DGIT_DEPRECATE_HARD -DGIT2R_HAVE_BUF_DISPOSE -DGIT2R_HAVE_OBJECT_ANY -DGIT2R_HAVE_GIT_ERROR  -I/usr/local/include  -fpic  -g -O2  -c git2r.c -o git2r.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [git2r.o] Error 1
+ERROR: compilation failed for package ‘git2r’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/git2r’
+* installing *source* package ‘jsonlite’ ...
+** package ‘jsonlite’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -Iyajl/api  -I/usr/local/include -fvisibility=hidden  -fpic  -g -O2  -c base64.c -o base64.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [base64.o] Error 1
+ERROR: compilation failed for package ‘jsonlite’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/jsonlite’
+* installing *source* package ‘remotes’ ...
+** package ‘remotes’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (remotes)
+* installing *source* package ‘rstudioapi’ ...
+** package ‘rstudioapi’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rstudioapi)
+* installing *source* package ‘withr’ ...
+** package ‘withr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (withr)
+* installing *source* package ‘BiocManager’ ...
+** package ‘BiocManager’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (BiocManager)
+* installing *source* package ‘bitops’ ...
+** package ‘bitops’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c bit-ops.c -o bit-ops.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [bit-ops.o] Error 1
+ERROR: compilation failed for package ‘bitops’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/bitops’
+* installing *source* package ‘curl’ ...
+** package ‘curl’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS= 
+Using PKG_LIBS=-lcurl  
+------------------------- ANTICONF ERROR ---------------------------
+Configuration failed because libcurl was not found. Try installing:
+ * deb: libcurl4-openssl-dev (Debian, Ubuntu, etc)
+ * rpm: libcurl-devel (Fedora, CentOS, RHEL)
+ * csw: libcurl_dev (Solaris)
+If libcurl is already installed, check that 'pkg-config' is in your
+PATH and PKG_CONFIG_PATH contains a libcurl.pc file. If pkg-config
+is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+--------------------------------------------------------------------
+ERROR: configuration failed for package ‘curl’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/curl’
+* installing *source* package ‘evaluate’ ...
+** package ‘evaluate’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (evaluate)
+* installing *source* package ‘pingr’ ...
+** package ‘pingr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG   -I/usr/local/include  -fpic  -g -O2  -c rping.c -o rping.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [rping.o] Error 1
+ERROR: compilation failed for package ‘pingr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/pingr’
+* installing *source* package ‘Rcpp’ ...
+** package ‘Rcpp’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+/usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/g++ -std=gnu++11 -I"/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/r-3.6.1-zrytncqvsnw5h4dl6t6njefj7otl4bg4/rlib/R/include" -DNDEBUG -I../inst/include/  -I/usr/local/include  -fpic  -g -O2  -c api.cpp -o api.o
+Spack compiler must be run from Spack! Input 'SPACK_PREFIX' is missing.
+make: *** [api.o] Error 1
+ERROR: compilation failed for package ‘Rcpp’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/Rcpp’
+* installing *source* package ‘whisker’ ...
+** package ‘whisker’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (whisker)
+ERROR: dependency ‘Rcpp’ is not available for package ‘plyr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/plyr’
+ERROR: dependency ‘colorspace’ is not available for package ‘munsell’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/munsell’
+ERROR: dependencies ‘Rcpp’, ‘rlang’, ‘BH’ are not available for package ‘later’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/later’
+ERROR: dependency ‘sys’ is not available for package ‘askpass’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/askpass’
+ERROR: dependency ‘Rcpp’ is not available for package ‘fs’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/fs’
+ERROR: dependency ‘rlang’ is not available for package ‘purrr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/purrr’
+ERROR: dependency ‘backports’ is not available for package ‘rprojroot’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rprojroot’
+ERROR: dependency ‘ps’ is not available for package ‘processx’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/processx’
+ERROR: dependency ‘lazyeval’ is not available for package ‘rex’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rex’
+ERROR: dependencies ‘digest’, ‘Rcpp’ are not available for package ‘htmltools’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/htmltools’
+* installing *source* package ‘prettyunits’ ...
+** package ‘prettyunits’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (prettyunits)
+ERROR: dependencies ‘glue’, ‘stringi’ are not available for package ‘stringr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/stringr’
+ERROR: dependency ‘Rcpp’ is not available for package ‘xml2’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/xml2’
+ERROR: dependencies ‘glue’, ‘rlang’ are not available for package ‘lifecycle’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/lifecycle’
+ERROR: dependency ‘mime’ is not available for package ‘markdown’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/markdown’
+* installing *source* package ‘igraph’ ...
+** package ‘igraph’ successfully unpacked and MD5 sums checked
+** using staged installation
+checking for gcc... /usr/local/software/spack/spack-0.11.2/lib/spack/env/gcc/gcc
+checking whether the C compiler works... no
+configure: error: in `/tmp/RtmpxuFxUt/R.INSTALL3a0bf39b2522d/igraph':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+ERROR: configuration failed for package ‘igraph’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/igraph’
+* installing *source* package ‘tinytex’ ...
+** package ‘tinytex’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tinytex)
+ERROR: dependencies ‘Rcpp’, ‘digest’ are not available for package ‘hunspell’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/hunspell’
+* installing *source* package ‘cli’ ...
+** package ‘cli’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (cli)
+ERROR: dependency ‘rlang’ is not available for package ‘ellipsis’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/ellipsis’
+ERROR: dependency ‘digest’ is not available for package ‘memoise’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/memoise’
+ERROR: dependencies ‘plyr’, ‘Rcpp’, ‘stringr’ are not available for package ‘reshape2’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/reshape2’
+ERROR: dependencies ‘munsell’, ‘Rcpp’ are not available for package ‘scales’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/scales’
+ERROR: dependency ‘stringr’ is not available for package ‘selectr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/selectr’
+ERROR: dependencies ‘backports’, ‘ellipsis’, ‘digest’, ‘glue’, ‘rlang’ are not available for package ‘vctrs’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/vctrs’
+ERROR: dependencies ‘htmltools’, ‘jsonlite’, ‘yaml’ are not available for package ‘htmlwidgets’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/htmlwidgets’
+ERROR: dependencies ‘Rcpp’, ‘later’, ‘rlang’ are not available for package ‘promises’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/promises’
+ERROR: dependency ‘askpass’ is not available for package ‘openssl’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/openssl’
+ERROR: dependency ‘processx’ is not available for package ‘xopen’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/xopen’
+ERROR: dependency ‘processx’ is not available for package ‘callr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/callr’
+ERROR: dependency ‘rprojroot’ is not available for package ‘desc’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/desc’
+ERROR: dependencies ‘curl’, ‘xml2’ are not available for package ‘rversions’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rversions’
+* installing *source* package ‘sessioninfo’ ...
+** package ‘sessioninfo’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (sessioninfo)
+ERROR: dependencies ‘digest’, ‘rlang’ are not available for package ‘testthat’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/testthat’
+ERROR: dependencies ‘markdown’, ‘stringr’, ‘yaml’ are not available for package ‘knitr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/knitr’
+ERROR: dependencies ‘Rcpp’, ‘promises’, ‘later’, ‘BH’ are not available for package ‘httpuv’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/httpuv’
+ERROR: dependencies ‘fansi’, ‘rlang’, ‘utf8’, ‘vctrs’ are not available for package ‘pillar’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/pillar’
+ERROR: dependencies ‘curl’, ‘jsonlite’, ‘mime’, ‘openssl’ are not available for package ‘httr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/httr’
+ERROR: dependencies ‘callr’, ‘desc’, ‘rprojroot’ are not available for package ‘pkgbuild’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/pkgbuild’
+ERROR: dependency ‘testthat’ is not available for package ‘mockery’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/mockery’
+ERROR: dependencies ‘knitr’, ‘yaml’, ‘htmltools’, ‘base64enc’, ‘jsonlite’, ‘mime’, ‘stringr’ are not available for package ‘rmarkdown’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown’
+ERROR: dependencies ‘commonmark’, ‘xml2’, ‘hunspell’, ‘knitr’ are not available for package ‘spelling’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/spelling’
+ERROR: dependencies ‘httpuv’, ‘mime’, ‘jsonlite’, ‘digest’, ‘htmltools’, ‘sourcetools’, ‘later’, ‘promises’, ‘rlang’ are not available for package ‘shiny’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/shiny’
+ERROR: dependencies ‘jsonlite’, ‘httr’ are not available for package ‘gh’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/gh’
+ERROR: dependencies ‘xml2’, ‘httr’, ‘selectr’ are not available for package ‘rvest’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rvest’
+ERROR: dependencies ‘fansi’, ‘pillar’, ‘rlang’ are not available for package ‘tibble’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/tibble’
+ERROR: dependencies ‘fs’, ‘glue’, ‘httr’, ‘jsonlite’, ‘rlang’ are not available for package ‘gargle’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/gargle’
+ERROR: dependencies ‘httr’, ‘jsonlite’ are not available for package ‘whoami’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/whoami’
+ERROR: dependencies ‘digest’, ‘jsonlite’, ‘rex’, ‘httr’, ‘yaml’ are not available for package ‘covr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/covr’
+ERROR: dependencies ‘desc’, ‘pkgbuild’, ‘rlang’, ‘rprojroot’ are not available for package ‘pkgload’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/pkgload’
+ERROR: dependencies ‘callr’, ‘desc’, ‘digest’, ‘pkgbuild’, ‘rprojroot’, ‘xopen’ are not available for package ‘rcmdcheck’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rcmdcheck’
+ERROR: dependencies ‘rex’, ‘stringdist’, ‘testthat’, ‘digest’, ‘igraph’, ‘httr’, ‘jsonlite’, ‘knitr’ are not available for package ‘lintr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/lintr’
+ERROR: dependencies ‘digest’, ‘lazyeval’, ‘reshape2’, ‘rlang’, ‘scales’, ‘tibble’ are not available for package ‘ggplot2’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/ggplot2’
+ERROR: dependency ‘tibble’ is not available for package ‘rematch2’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rematch2’
+ERROR: dependencies ‘curl’, ‘desc’, ‘fs’, ‘gh’, ‘git2r’, ‘glue’, ‘purrr’, ‘rlang’, ‘rprojroot’, ‘yaml’ are not available for package ‘usethis’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/usethis’
+ERROR: dependencies ‘commonmark’, ‘desc’, ‘digest’, ‘pkgload’, ‘purrr’, ‘Rcpp’, ‘stringi’, ‘stringr’, ‘xml2’ are not available for package ‘roxygen2’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/roxygen2’
+ERROR: dependencies ‘curl’, ‘httr’, ‘jsonlite’, ‘rvest’, ‘tibble’, ‘xml2’ are not available for package ‘foghorn’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/foghorn’
+ERROR: dependencies ‘htmltools’, ‘jsonlite’, ‘lazyeval’, ‘shiny’, ‘ggplot2’ are not available for package ‘crosstalk’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/crosstalk’
+ERROR: dependency ‘rematch2’ is not available for package ‘parsedate’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/parsedate’
+ERROR: dependencies ‘base64enc’, ‘gargle’, ‘httr’, ‘jsonlite’, ‘lifecycle’, ‘mime’, ‘rematch2’ are not available for package ‘gmailr’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/gmailr’
+ERROR: dependencies ‘callr’, ‘desc’, ‘digest’, ‘fs’, ‘fansi’, ‘highlight’, ‘httr’, ‘memoise’, ‘openssl’, ‘purrr’, ‘processx’, ‘rematch2’, ‘rlang’, ‘rmarkdown’, ‘tibble’, ‘xml2’, ‘yaml’ are not available for package ‘pkgdown’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/pkgdown’
+ERROR: dependencies ‘htmltools’, ‘htmlwidgets’, ‘jsonlite’, ‘crosstalk’, ‘promises’ are not available for package ‘DT’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/DT’
+ERROR: dependencies ‘callr’, ‘desc’, ‘digest’, ‘httr’, ‘jsonlite’, ‘parsedate’, ‘pillar’, ‘processx’, ‘rappdirs’, ‘rcmdcheck’, ‘tibble’, ‘uuid’, ‘whoami’ are not available for package ‘rhub’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/rhub’
+ERROR: dependencies ‘usethis’, ‘callr’, ‘covr’, ‘desc’, ‘digest’, ‘DT’, ‘ellipsis’, ‘glue’, ‘git2r’, ‘httr’, ‘jsonlite’, ‘memoise’, ‘pkgbuild’, ‘pkgload’, ‘rcmdcheck’, ‘roxygen2’, ‘rversions’, ‘testthat’ are not available for package ‘devtools’
+* removing ‘/home/aam71/R/x86_64-pc-linux-gnu-library/3.6/devtools’
+
+The downloaded source packages are in
+  ‘/tmp/RtmpuRRxdc/downloaded_packages’
+There were 50 or more warnings (use warnings() to see the first 50)

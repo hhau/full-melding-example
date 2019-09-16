@@ -35,7 +35,7 @@ wsre_obj <- wsre(
     wf_exponent = 1, 
     target_dimension = target_dimension
   ),
-  n_mcmc_samples = 1e4,
+  n_mcmc_samples = 1250,
   flog_threshold = futile.logger::TRACE
 )
 
@@ -70,54 +70,3 @@ saveRDS(
   file = "rds/sev-prior-wsre-estimate.rds"
 )
 
-# test_phi_nu <- c(phi_1 = 80, phi_2 = 1000)
-# test_phi_de <- c(phi_1 = 90, phi_2 = 1500)
-# 
-# # the 1, 2 things are dodge here
-# new_wsre_obj <- wsre_obj
-# new_wsre_obj$estimates[1:2] <- NULL
-# 
-# evaluate(
-#   wsre_obj, 
-#   test_phi_nu, 
-#   test_phi_de
-# )
-# 
-# 
-# new_estimate <- new_estimate[-which(sapply(new_estimate, is.null))]
-# new_wsre_obj$estimates <- new_estimate
-# 
-# wsre_obj <- new_wsre_obj
-# 
-# eval_new <- function (wsre_obj, x_nu, x_de) 
-# {
-#   stopifnot(length(wsre_obj$estimates[[1]]$wf_pars$wf_mean) == 
-#               length(x_nu), length(x_nu) == length(x_de))
-#   n_estimates <- length(wsre_obj$estimates)
-#   result <- c(NaN)
-#   res <- parallel::mclapply(1:n_estimates, mc.cores = 6, function(estimate_index) {
-#     with(wsre_obj$estimates[[estimate_index]], {
-#       ratio_value <- c(NA)
-#       weighting_value <- c(NA)
-#       ratio_value <- ratio(x_nu = x_nu, x_de = x_de)
-#       if (!wsre:::.is_numerically_okay(ratio_value)) {
-#         return(list(weights = NA, w_ratios = NA))
-#       }
-#       weighting_value <- weighting(x_nu = x_nu, x_de = x_de)
-#       weighted_ratio_value <- exp(log(weighting_value) + 
-#                                     log(ratio_value))
-#       return(list(weight = weighting_value, w_ratio = weighted_ratio_value))
-#     })
-#   })
-#   weights_matrix <- do.call(rbind, lapply(res, function(a_list) {
-#     a_list$weight
-#   }))
-#   ratios_matrix <- do.call(rbind, lapply(res, function(a_list) {
-#     a_list$w_ratio
-#   }))
-#   norm_const <- colSums(weights_matrix, na.rm = TRUE)
-#   ratio_value <- colSums(ratios_matrix, na.rm = TRUE)
-#   return((1/norm_const) * ratio_value)
-# }
-# 
-# eval_new(new_wsre_obj, test_phi_nu, test_phi_de)

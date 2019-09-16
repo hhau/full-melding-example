@@ -11,7 +11,7 @@ icu_post_samples <- readRDS("rds/icu-post-samples.rds")
 icu_vars <- c("tot.conf[1]", "tot.conf[2]")
 phi_post_samples <- icu_post_samples[[1]] [, icu_vars]
 
-plot_samples <- 50000
+plot_samples <- min(50000, dim(icu_post_samples)[1], dim(phi_post_samples)[1])
 
 plot_tbl <- tibble(
   x = phi_post_samples[1 : plot_samples, 1],

@@ -19,7 +19,9 @@ STAN_FILES = $(SCRIPTS)/stan-files
 ALL_PLOTS = $(PLOTS)/prior-comparison.pdf \
 	$(PLOTS)/icu-posterior.pdf \
 	$(PLOTS)/stage-two-wsre-phi-trace.pdf \
-	$(PLOTS)/stage-two-psi-trace.pdf
+	$(PLOTS)/stage-two-psi-trace.pdf \
+	$(PLOTS)/stage-two-no-wsre-phi-trace.pdf \
+  $(PLOTS)/stage-two-no-wsre-psi-trace.pdf
 
 all : $(WRITEUP)
 
@@ -61,7 +63,7 @@ $(PLOTS)/prior-comparison.pdf : $(SCRIPTS)/prior-plotter.R $(ICU_PRIOR_SAMPLES) 
 $(RDS)/sev-prior-wsre-estimate.rds : $(SCRIPTS)/sev-prior-wsre-sampler.R $(STAN_FILES)/sev-prior-wsre.stan
 	$(RSCRIPT) $<
 
-# Stage two
+# Stage two with wsre
 POOLED_PRIOR = $(SCRIPTS)/pooled-prior.R
 
 $(RDS)/wsre-stage-two-stage-one-indices.rds : $(SCRIPTS)/stage-two-wsre.R $(STAN_FILES)/sev-prior-psi-step.stan $(STAN_FILES)/sev-prior-stage-two-phi-lp.stan $(ICU_POST_SAMPLES) $(POOLED_PRIOR)
@@ -74,4 +76,17 @@ $(RDS)/wsre-stage-two-psi-samples.rds : $(RDS)/wsre-stage-two-stage-one-indices.
 $(PLOTS)/stage-two-wsre-phi-trace.pdf : $(SCRIPTS)/stage-two-wsre-plotter.R $(PLOT_SETTINGS) $(RDS)/wsre-stage-two-phi-samples.rds $(RDS)/wsre-stage-two-psi-samples.rds
 	$(RSCRIPT) $<
 
-$(PLOTS)/stage-two-psi-trace.pdf : $(PLOTS)/stage-two-wsre-phi-trace.pdf
+$(PLOTS)/stage-two-wsre-psi-trace.pdf : $(PLOTS)/stage-two-wsre-phi-trace.pdf
+
+# stage two no wsre
+$(RDS)/no-wsre-stage-two-stage-one-indices.rds : $(SCRIPTS)/stage-two-no-wsre.R $(STAN_FILES)/sev-prior-psi-step.stan $(STAN_FILES)/sev-prior-stage-two-phi-lp.stan $(ICU_POST_SAMPLES) $(POOLED_PRIOR)
+	$(RSCRIPT) $<
+
+$(RDS)/no-wsre-stage-two-phi-samples.rds : $(RDS)/no-wsre-stage-two-stage-one-indices.rds 
+
+$(RDS)/no-wsre-stage-two-psi-samples.rds : $(RDS)/no-wsre-stage-two-stage-one-indices.rds 
+
+$(PLOTS)/stage-two-no-wsre-phi-trace.pdf : $(SCRIPTS)/stage-two-no-wsre-plotter.R $(PLOT_SETTINGS) $(RDS)/no-wsre-stage-two-phi-samples.rds $(RDS)/no-wsre-stage-two-psi-samples.rds
+	$(RSCRIPT) $<
+
+$(PLOTS)/stage-two-no-wsre-psi-trace.pdf : $(PLOTS)/stage-two-no-wsre-phi-trace.pdf
