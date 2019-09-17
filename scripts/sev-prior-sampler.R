@@ -28,7 +28,7 @@ init_list <- lapply(1 : 5, function(x) generate_sub_init())
 
 model_fit <- sampling(
   prefit,
-  cores = 5,
+  cores = 1,
   chains = 5,
   iter = 4000 + (50000/5 + 2),
   warmup = 4000,

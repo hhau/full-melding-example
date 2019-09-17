@@ -40,7 +40,7 @@ flog.info("Sampling ICU model (Prior)")
 icu_prior_samples <- coda.samples(
   model = jags,
   variable.names = monitor,
-  n.iter = 30000,
+  n.iter = 50000,
   thin = 10
 )
 

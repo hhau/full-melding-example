@@ -8,7 +8,7 @@ source("scripts/pooled-prior.R")
 
 # set up containers, log files
 # keep track of the stage one indices?
-log_filename <- paste0("logs/" , Sys.Date(), "-stage-two-wsre-run.log") 
+log_filename <- paste0("logs/" , Sys.Date(), "-stage-two-no-wsre-run.log") 
 flog.appender(appender.file(log_filename), name = "stage-two-logger")
 
 # read in the stage one samples.
@@ -17,8 +17,8 @@ icu_stage_one_samples <- readRDS("rds/icu-post-samples.rds")
 icu_vars <- c("tot.conf[1]", "tot.conf[2]")
 icu_phi_samples <- icu_stage_one_samples[[1]][, icu_vars]
 
-n_stage_two_mcmc <- 13500
-n_chain <- 5
+n_stage_two_mcmc <- 13500 * 5.5 
+n_chain <- 15
 
 flog.info("Compiling Stan objects")
 # compile various Stan objects
@@ -105,7 +105,7 @@ mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
     
     log_sev_prior_term <- 
       log(sev_prior_marginal(current_phi[1], current_phi[2])) - 
-      log(sev_prior_marginal(proposed_phi[1], proposed_phi[i[2]))
+      log(sev_prior_marginal(proposed_phi[1], proposed_phi[2]))
     
     if ((proposed_phi[1] < psi_samples[ii - 1, 1, 2]) && (proposed_phi[2] < psi_samples[ii - 1, 1, 3])) {
       log_sev_prob <- log_prob(
@@ -135,11 +135,15 @@ mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
       log_sev_prob <- -Inf
     }
     
-    
     log_alpha <- log_pooled_prior_term + 
       log_icu_prior_term + 
       log_sev_prior_term +
       log_sev_prob
+
+    # Gross hack
+    if (is.na(log_alpha) | is.nan(log_alpha)) {
+      log_alpha <- -Inf
+    }
     
     # flog.info(
     #   sprintf(

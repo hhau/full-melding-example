@@ -61,6 +61,8 @@ module load rhel7/default-peta4            # REQUIRED - loads the basic environm
 # Before running your code, you should run R and install any required packages.
 module load r-3.6.0-gcc-5.4.0-bzuuksv
 module load jags-4.3.0-gcc-5.4.0-4z5shby
+module load pandoc/2.0.6
+module load pandoc-citeproc/0.12.2.2
 
 # If using the GPU cluster, replace the third line with the uncommented line:
 # module load rhel7/default-gpu
@@ -73,7 +75,7 @@ module load jags-4.3.0-gcc-5.4.0-4z5shby
 
 # You can use any arbitrary set of Linux commands here
 
-CMD="make"
+CMD="make plots"
 
 # Or for example:
 # CMD="Rscript myScript.R"

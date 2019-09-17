@@ -6,7 +6,7 @@ fontfamily: tgpagella
 fontsize: 10pt
 papersize: a4
 geometry: margin=2.25cm
-bibliography: ../0bibliography/year-1-bib.bib
+# bibliography: ../0bibliography/year-1-bib.bib
 csl: aam71-test.csl
 output: 
   pdf_document:
@@ -21,67 +21,68 @@ output:
 knitr::opts_chunk$set(echo = FALSE, comment = NA, out.width = "85%", fig.align = "center", auto_pdf = TRUE)
 ```
 
-# Introduction
+# Model origins
 
-High level summary:
+@presanis:etal:14 undertakes a large evidence synthesis in order to estimate the severity of the H1N1 pandemic amongst the population of England.
+The H1N1 pandemic occurred in three _waves_, and the change in severity between waves is of interest.
+Due to the time between waves, the available sources of data differ between waves.
+During the third wave some data sources had a decrease in typical sample size, and began aggregating previously available data in a coarser manner.
+To ameliorate the impact of the data coarsening, independent data on one aspect of the large severity model, the number of suspected influenza cases in hospital's intensive care units (ICU), can be incorporated.
+@goudie:etal:18 presents a Markov melding approach for joining the independent ICU model with a simplified version of the larger severity model.
 
-Two models arising from different data sources / scopes.
-Not obvious how to join them into one big model.
-Non-invertible link function makes the ICU model a clear choice for stage one.
+We consider this same pair of models here, as the melded parameter has an unknown prior marginal distribution under both models, and the independent nature of the data sources could result in a degree of conflict between the various intermediary melding distributions.
+This is also an example of the Markov melding where the melded model has no obvious implied joint model, as the link parameter is not a root node in either model.
 
+## ICU
 
-## Origins of the models
+The data for the ICU submodel considers aggregate weekly counts of patients in the ICU of all the hospitals in England.
+Such data is an underestimate of the true number of patients affected by H1N1 influenza, and also requires careful temporal consideration, as patients enter and exit the ICU in a stochastic manner.
+The third wave of the H1N1 influenza predominantly occurred during a 78 day block between December 2010 and February 2011.
+ICU observations were recorded weekly on days $U = \{8, 15, \ldots, 78\}$, and considered the number of children $a = 1$ and adults $a = 2$ in the ICU on the day of observation.
+Denote a specific weekly observation as $y_{a, t}$ for $t \in U$.
+The estimated lower bound on the cumulative number of ICU admissions over the whole 78 day block $T = \{1, 2, \ldots, 78\}$, for each age group, functions as our link parameter $\phi = (\phi_{1}, \phi_2)$.
+A need to appropriately model the temporal nature of the weekly ICU data motivates a time inhomogeneous Poisson process.
+The process has time inhomogeneous rate parameter $\lambda_{a, t}$ for $t \in T$, with an age group specific ICU exit rate $\mu_{a}$, which is exponentially distributed.
 
-- the models considered in @goudie:etal:18 are summaries of the more detailed evidence synthesis models developed by @presanis:etal:14. 
-- There is a model for the prevalence of H1N1 influenza amongst patients in the intensive care units (ICU) of all hospitals in England.
-- One aspect of this model is the cumulative number of ICU admissions over the time period of interest.
-- This functions as the link parameter $\phi$ for the purposes of Markov melding.
-- The second model exists as the data used to develop the first model only exists for a fraction of the third wave of the H1N1.
-- Again, it is a simplified version of the severity model developed in @presanis:etal:14.
-- It more directly informs $\phi$ (cumulated confirmed new admissions)
+To address the difference between the observation times $U$, and the daily support of our Poisson process $T$, the expected number of influenza patients in the ICU at time $t$ is
+\input{tex-input/icu-model/0010-thinned-poisson-process.tex}
+An coherent indentifiability assumption of $\eta_{a, 1} = 0$ is required, and assumes that no influenza patients were in the ICU at time $t = 0$.
 
-### ICU
+Influenza strains do not exist in isolation, hence not all ICU admissions with influenza symptoms were the result of the H1N1 pandemic.
+Consider $\lambda_{a, t}$ as the expected number of _suspected_ H1N1 cases.
+Weekly virological positivity data is available at weeks $V = \{1, \ldots, 11\}$, and informs the proportion of influenza cases which are attributable to the H1N1 virus $\pi_{a, t}^{\text{pos}}$.
+The virology data consists of the number of H1N1-positive swabs $z_{a, v}^{\text{pos}}$ and the total number of swabs tested for influenza that week $n_{a, z}^{\text{pos}}$.
+This proportion relates the counts to $\pi_{a, t}^{\text{pos}}$ a truncated uniform prior on $\pi_{a, t}^{\text{pos}}$,
+\input{tex-input/icu-model/0020-pipos-unif-model.tex}
+with $v = 1$ for $t = 1, 2, \ldots, 14$, and $v = \lfloor(t - 1) \mathop{/} 7 \rfloor$ to align the temporal indices.
+The estimate of $\pi_{a, t}^{\text{pos}}$ is then used to compute $\phi_{a}$
+\input{tex-input/icu-model/0021-phi-icu-calc.tex}
+This summation is a non-invertible function, which guides our choice of model ordering when melding, which we will discuss in Section&nbsp;\ref{model-ordering}.
 
-Section 5.2 of the main paper, seems to mostly be in the supplementary material though?
+The priors for the remaining parameters are a lognormal random walk for the expected number of new admissions 
+\input{tex-input/icu-model/0030-prior-set-one.tex}
+for $t = 2, 3, \ldots, 78$, and priors for the age group specific exit rates
+\input{tex-input/icu-model/0040-prior-set-two.tex}
 
-- what is the goal of the original ev-synth? 
-  - Understanding the development of the pandemic?
-  - Forecasting hospitalisations?
-- How doe ev synth help here?
+## Severity
 
-### Severity
-
-Simplification of an evidence synthesis model.
-There are seven age groups, each with population sizes.
-These are all wave specific, as their were three waves of influenza in the 2009 H1N1 pandemic.
-There are 5 severities for infections.
-Each age group population, for each wave, has a number of new infections at the 5 severity levels.
-These infections are cumulative, such that for a specific age group and specific wave, the number of new infections at the second mode sever level is the sum of the infections a the first level plus the ones at the second level. 
-  - They aren't cumulative over time as well? I guess people get better don't they.
-
-This severity model can be used to answer questions such as "how many people get hospitalised/admitted to the ICU (i.e. hit a certain severity) in a certain wave, for (all/a particular age group)".
-
-Supplementary material says our parameter of interest for melding is $N_{3, a, I}$, which are the third wave admissions for age group $a$ at severity level $I$ (ICU admission). 
-
-## Relation to wsre 
-
-- Don't know if this is necessarily a paragraph/section?
-- Melding is a more general version of ev synth.
-- This example is another situation where the common parameter has an unknown prior marginal distribution.
-- due to the differences information sources, the distributions (prior and posterior) for the melding parameter differ in scale.
-  - this is because the ICU data is information rich, and is able to inform a complex model that uses uninformative priors
-  - The severity model is information poor (in some sense), it informs a much simpler model.
-- in this particular setting this results in differences in location and scale of the various melding intermediary distributions, which affect the melded posterior.
+A simplified version of the remaining components of the large severity model of @presanis:etal:14 is considered here.
+The estimate of the cumulative number of ICU admissions $\phi_{a}$ is assumed to be an underestimate of the true number of of ICU admissions due to H1N1 $\chi_{a}$.
+The model we consider to address this is 
+\input{tex-input/icu-model/0050-sev-submodel.tex}
+where $\pi^{\text{det}}$ is the age group constant probability of detection, and the priors on $\chi_{a}$ are appropriate summaries of the other components of the larger severity model.
 
 ## Model ordering
 
-- Here, there is a natural ordering due to the non-invertible link function.
-- In general it doesn't mathematically matter about this, because it can be extended into an invertible one, but in practice the performance of the multi-stage sampler heavily depends on the choice of link function extension.
+The multi-stage Metropolis-Hastings MCMC approach of @goudie:etal:18 necessitates an order in which we consider the submodels.
+Here, there is a natural ordering due to the non-invertible link function used to compute $\phi_{a}$.
+In general melding is mathematically insensitive to this ordering, as any link function can be extended into an invertible one without affecting the outcome.
+However, in practice the performance of the multi-stage sampler heavily depends on the choice of link function extension, and hence the order of the submodels is important.
 
-- The natural ordering is also widest / least informative model first. 
-- This way we are least sensitive to differences in location between the models.
-- The cost is that we are susceptible to particle degeneracy / sample shrinkage.
-  - This is a problem we can monitor though, differences in location we cannot. 
+A natural ordering is to consider the "widest" submodel first.
+This way we are least sensitive to differences in location between the models.
+The cost is that we are susceptible to particle degeneracy, as there may be few samples from the wider submodel in the region of support under the melded model.
+Recognising particle degeneracy is a relatively well understood problem [cite SMC ESS paper or something], which is an easier to address problem than having a particle system that is too narrow to begin with.
 
 # Compare the Priors
 
@@ -102,9 +103,8 @@ knitr::include_graphics("plots/icu-posterior.pdf")
 
 # Estimate the severity self-density ratio using `wsre`
 
-We use a grid of values for $\phi_{1}$ and $\phi_{2}$ based on taking 10 equally spaced values, between 30 and 275 for $\phi_{1}$, and 500 and 3000 for $\phi_{2}$, and taking the outer product of these values.
+We use a grid of 100 points for the mean of the Gaussian weighting functions $\mu_{\wfindex}$ based on taking 10 equally spaced values, between 30 and 275 for $\phi_{1}$, and 500 and 3000 for $\phi_{2}$, and $\sigma^2_{\wfindex} = (25^2, 250^2)$ for all $\wfindex$.
 
-- Is is possible to visualise this estimate? Parallel coordinates? Four input dimensions and an output dimension is hard.
 
 # Melding
 
@@ -120,125 +120,29 @@ We use a grid of values for $\phi_{1}$ and $\phi_{2}$ based on taking 10 equally
 
 ## Compare the melded output with/without wsre
 
-### With `wsre`
+### Traceplots of $\phi_{a}$ __with__ `wsre`
 
-
-### Chains 
-
-```{r phi_trace_wsre, fig.cap = "$\\phi$ trace "}
-knitr::include_graphics("plots/stage-two-wsre-phi-trace-stuck-two.pdf")
+```{r phi_trace_wsre, fig.cap = "$\\phi$ trace with the self-density ratio estimate."}
+knitr::include_graphics("plots/stage-two-wsre-phi-trace.pdf")
 ```
 
 $\psi_{2}$ trace:
 
-```{r psi_trace, fig.cap = "$\\psi_{2}$ trace "}
-knitr::include_graphics("plots/stage-two-wsre-psi-trace-stuck-two.pdf")
-```
-
-Something is blowing up and pining the $\psi_{2}$ traces to 1 or 0.
-This is a numerical instability, I think its why Rob wrote the numerically stable continuous extension to the binomial? This must be an issue inside the `lgamma` function or the like.
-
-```
-INFO [2019-08-29 10:37:32] Iteration: 92,   
-  pi_det_curr: 0.468302,   
-  pi_det_prop*: 0.699601  
-  chi_grp[1]_curr: 213.897938,  
-  chi_grp[1]_prop*: 233.885737,  
-  chi_grp[2]_curr: 2117.363224,  
-  chi_grp[2]_prop*: 1568.307326,
-
-INFO [2019-08-29 10:37:34] Iteration: 93,
-  proposed_phi[1]: 159.724211,  proposed_phi[2]: 1262.438645,
-  current_phi[1]: 91.424532,  current_phi[2]: 1219.395636,
-  log_pooled_prior_term: -2.271681,
-  log_icu_prior_term: -0.000001,  
-  log_sev_prior_term: 5.058097, 
-  log_sev_prob: 26.643150, 
-  log_alpha: 29.429565.
-
-INFO [2019-08-29 10:37:34] Iteration: 93,
-  pi_det_curr: 0.699601
-  pi_det_prop*: 0.575780  
-  chi_grp[1]_curr: 233.885737
-  chi_grp[1]_prop*: 181.190329
-  chi_grp[2]_curr: 1568.307326
-  chi_grp[2]_prop*: 2028.015430
-
-INFO [2019-08-29 10:37:36] Iteration: 94,
-  proposed_phi[1]: 100.965402,  proposed_phi[2]: 1397.159137,
-  current_phi[1]: 159.724211,  current_phi[2]: 1262.438645,
-  log_pooled_prior_term: 2.435806,
-  log_icu_prior_term: -0.000000,  
-  log_sev_prior_term: -4.705567, 
-  log_sev_prob: -4.442096, 
-  log_alpha: -6.711857.
-
-INFO [2019-08-29 10:37:36] Iteration: 94,
-  pi_det_curr: 0.575780,
-  pi_det_prop*: 0.692103  
-  chi_grp[1]_curr: 181.190329,  
-  chi_grp[1]_prop*: 142.054521,  
-  chi_grp[2]_curr: 2028.015430,  
-  chi_grp[2]_prop*: 2222.514998,
-
-INFO [2019-08-29 10:37:38] Iteration: 95,
-  proposed_phi[1]: 115.642500,  proposed_phi[2]: 1237.096530,
-  current_phi[1]: 159.724211,  current_phi[2]: 1262.438645,
-  log_pooled_prior_term: 1.855619,
-  log_icu_prior_term: 0.000000,  
-  log_sev_prior_term: -3.649947, 
-  log_sev_prob: 73.035322, 
-  log_alpha: 71.240994.
-
-INFO [2019-08-29 10:37:39] Iteration: 95,
-  pi_det_curr: 0.692103, 
-  pi_det_prop*: 1.000000  
-  chi_grp[1]_curr: 142.054521,  
-  chi_grp[1]_prop*: 34.425910,  
-  chi_grp[2]_curr: 2222.514998,  
-  chi_grp[2]_prop*: 4.509630,
-```
-
-I think this instability occurs because I am not enforcing that $\phi_{a} < \chi_{a}$.
-Let us enforce this constraint and try again.
-
-## With constraint
-
-```{r phi_trace_new, fig.cap = "new $\\phi$ trace - looks better, just that it will take a very long time to mix."}
-knitr::include_graphics("plots/stage-two-wsre-phi-trace.pdf")
-```
-
-```{r psi_trace_new, fig.cap = "new $\\psi$ trace - looks better"}
+```{r psi_trace_wsre, fig.cap = "$\\psi_{2}$ trace, final 1000 samples. Mixing is governed by the mixing of $\\phi$."}
 knitr::include_graphics("plots/stage-two-wsre-psi-trace.pdf")
 ```
 
-These look like they might mix, but this takes way too long?
-Checking the evaluation times:
+### Traceplots of $\phi_{2}$ __without__ `wsre`
 
-|Evaluation time (ms)|        Min|          Lq|        Mean|      Median|         Uq|        Max| Neval|
-|:-------------------|----------:|-----------:|-----------:|-----------:|----------:|----------:|-----:|
-|Pooled Prior        | 711903.503| 814219.6505| 872479.1858| 858421.2330| 891967.443| 2027122.36|   100|
-|ICU Marginal        | 120447.290| 170980.5430| 205826.4051| 194667.4105| 215049.231|  710914.34|   100|
-|Severity Marginal   | 592396.617| 644652.0000| 680230.9956| 666075.4520| 695234.646| 1784080.49|   100|
-|Severity Posterior  |    125.372|    338.5715|    803.4843|    666.8855|    769.018|   15684.96|   100|
+```{r phi_trace_no_wsre, fig.cap = "$\\phi$ trace without the self-density ratio estimate."}
+knitr::include_graphics("plots/stage-two-no-wsre-phi-trace.pdf")
+```
 
-Currently it takes 30secs per 5 iterations, and we can run 6 chains in parallel on my laptop.
-The burn-in time is minimal (to my knowledge). 
-I currently have 2.5 hours, which is 60 * 2.5 150 minutes, hence I could ask for 300 iterations. 
-I'll run 250 to be safe, and do a longer run at some point in the future? 
-This actually only took a bit less than half an hour, so I could do 500 iterations per hour.
-If this moves to the HPC, it would be nice to have some kind of checkpointing going on.
-  - This would need to save the chain_id, and current iteration.
+$\psi_{2}$ trace:
 
-\newpage
-
-# HPC strategy
-
-- Safety factor it at 450 iterations per hour.
--  to 6 cores and run `r round(32 / 6)` chains.
-- This means we can run `r 30 * 450` iterations per job, with a 2 hour buffer
-  - Assuming we request the maximum time length.
-
+```{r psi_trace_no_wsre, fig.cap = "$\\psi_{2}$ trace, final 1000 samples, no self-density estimate."}
+knitr::include_graphics("plots/stage-two-no-wsre-psi-trace.pdf")
+```
 
 # Conclusion
 

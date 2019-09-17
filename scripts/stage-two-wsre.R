@@ -17,7 +17,7 @@ icu_stage_one_samples <- readRDS("rds/icu-post-samples.rds")
 icu_vars <- c("tot.conf[1]", "tot.conf[2]")
 icu_phi_samples <- icu_stage_one_samples[[1]][, icu_vars]
 
-n_stage_two_mcmc <- 13500
+n_stage_two_mcmc <- 13500 * 5.5
 n_chain <- 5
 
 flog.info("Compiling Stan objects")
@@ -139,6 +139,11 @@ mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
       log_icu_prior_term + 
       log_sev_prior_term +
       log_sev_prob
+
+    # Gross hack
+    if (is.na(log_alpha) | is.nan(log_alpha)) {
+      log_alpha <- -Inf
+    }
     
     # flog.info(
     #   sprintf(

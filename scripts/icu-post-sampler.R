@@ -40,8 +40,8 @@ flog.info("Sampling ICU model (Posterior)")
 icu_post_samples <- coda.samples(
   model = jags,
   variable.names = monitor,
-  n.iter = 50000,
-  thin = 10
+  n.iter = 500000,
+  thin = 50
 )
 
 flog.info("Saving ICU samples to disk (Posterior)")

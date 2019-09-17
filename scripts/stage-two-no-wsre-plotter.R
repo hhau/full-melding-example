@@ -11,8 +11,11 @@ phi_trace <- bayesplot::mcmc_trace(
     labeller = label_parsed
   )
 )
-  
-psi_trace <- bayesplot::mcmc_trace(psi_samples)
+
+n_plot_psi <- 1000
+n_total <- dim(psi_samples)[1]
+plot_vec <- (n_total - n_plot_psi) : (n_total)
+psi_trace <- bayesplot::mcmc_trace(psi_samples[plot_vec, , ])
 
 ggsave_halfheight(
   plot = phi_trace,

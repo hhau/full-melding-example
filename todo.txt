@@ -40,3 +40,13 @@ TODO: This really needs to be faster
   - Final plots of phi / psi_{2}? I can go back and filter psi_{1} if I wanted too as well I guess.
 
 # I made a trivial edit on the hpc - lets see if rsync pulls it back
+
+Tue Sep 17 11:11:33 2019
+- 13500 samples takes 5:16 hours
+- we can hence do a lot more in a job
+- thinning is going to become important
+- Lets see if we can write out an RDS file with the SLURM job id in it?
+- Be able to read and batch arbitrary number of RDS files
+- We need to have some ESS diagnostics
+- phi_{a} is the only thing we should monitor for ESS
+- Still need to compare with / without wsre, consider recreating Fig 8 from the melding paper but just using log pooling, with/without wsre

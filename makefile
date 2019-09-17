@@ -8,6 +8,7 @@ TEX_FILES = $(wildcard tex-input/*.tex) \
 # exist (no target). hard code the target.
 # CHANGE THIS:
 WRITEUP = full-melding-model-ex.pdf
+WRITEUPONLY = full-melding-model-ex.pdf
 
 RDS = rds
 SCRIPTS = scripts
@@ -19,11 +20,12 @@ STAN_FILES = $(SCRIPTS)/stan-files
 ALL_PLOTS = $(PLOTS)/prior-comparison.pdf \
 	$(PLOTS)/icu-posterior.pdf \
 	$(PLOTS)/stage-two-wsre-phi-trace.pdf \
-	$(PLOTS)/stage-two-psi-trace.pdf \
+	$(PLOTS)/stage-two-wsre-psi-trace.pdf \
 	$(PLOTS)/stage-two-no-wsre-phi-trace.pdf \
   $(PLOTS)/stage-two-no-wsre-psi-trace.pdf
 
 all : $(WRITEUP)
+plots : $(ALL_PLOTS)
 
 # knitr is becoming more picky about encoding, specify UTF-8 input
 $(WRITEUP) : $(wildcard *.rmd) $(TEX_FILES) $(ALL_PLOTS)
@@ -64,9 +66,9 @@ $(RDS)/sev-prior-wsre-estimate.rds : $(SCRIPTS)/sev-prior-wsre-sampler.R $(STAN_
 	$(RSCRIPT) $<
 
 # Stage two with wsre
-POOLED_PRIOR = $(SCRIPTS)/pooled-prior.R
+POOLED_PRIOR = $(SCRIPTS)/pooled-prior.R $(RDS)/model1-kde.rds $(RDS)/model1-dprior-im.rds $(RDS)/model1-im.rds $(RDS)/sev-prior-wsre-estimate.rds
 
-$(RDS)/wsre-stage-two-stage-one-indices.rds : $(SCRIPTS)/stage-two-wsre.R $(STAN_FILES)/sev-prior-psi-step.stan $(STAN_FILES)/sev-prior-stage-two-phi-lp.stan $(ICU_POST_SAMPLES) $(POOLED_PRIOR)
+$(RDS)/wsre-stage-two-stage-one-indices.rds : $(SCRIPTS)/stage-two-wsre.R $(STAN_FILES)/sev-prior-psi-step.stan $(STAN_FILES)/sev-prior-stage-two-phi-lp.stan $(ICU_POST_SAMPLES) $(POOLED_PRIOR) 
 	$(RSCRIPT) $<
 
 $(RDS)/wsre-stage-two-phi-samples.rds : $(RDS)/wsre-stage-two-stage-one-indices.rds 
