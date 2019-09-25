@@ -26,11 +26,13 @@ generate_sub_init <- function() {
 
 init_list <- lapply(1 : 5, function(x) generate_sub_init())
 
+n_sev_prior_total <- 100000 # hundred thousand
+
 model_fit <- sampling(
   prefit,
   cores = 1,
   chains = 5,
-  iter = 4000 + (50000/5 + 2),
+  iter = 4000 + (n_sev_prior_total/5),
   warmup = 4000,
   control = list(adapt_delta = 0.99, max_treedepth = 12),
   init = init_list

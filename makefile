@@ -19,10 +19,11 @@ STAN_FILES = $(SCRIPTS)/stan-files
 # add to as needed
 ALL_PLOTS = $(PLOTS)/prior-comparison.pdf \
 	$(PLOTS)/icu-posterior.pdf \
-	$(PLOTS)/stage-two-wsre-phi-trace.pdf \
-	$(PLOTS)/stage-two-wsre-psi-trace.pdf \
-	$(PLOTS)/stage-two-no-wsre-phi-trace.pdf \
-  $(PLOTS)/stage-two-no-wsre-psi-trace.pdf
+	$(PLOTS)/stage-two-wsre-phi-trace.png \
+	$(PLOTS)/stage-two-wsre-psi-trace.png \
+	$(PLOTS)/stage-two-no-wsre-phi-trace.png \
+  $(PLOTS)/stage-two-no-wsre-psi-trace.png \
+  $(PLOTS)/melded-posterior-compare.pdf
 
 all : $(WRITEUP)
 plots : $(ALL_PLOTS)
@@ -75,10 +76,10 @@ $(RDS)/wsre-stage-two-phi-samples.rds : $(RDS)/wsre-stage-two-stage-one-indices.
 
 $(RDS)/wsre-stage-two-psi-samples.rds : $(RDS)/wsre-stage-two-stage-one-indices.rds 
 
-$(PLOTS)/stage-two-wsre-phi-trace.pdf : $(SCRIPTS)/stage-two-wsre-plotter.R $(PLOT_SETTINGS) $(RDS)/wsre-stage-two-phi-samples.rds $(RDS)/wsre-stage-two-psi-samples.rds
+$(PLOTS)/stage-two-wsre-phi-trace.png : $(SCRIPTS)/stage-two-wsre-plotter.R $(PLOT_SETTINGS) $(RDS)/wsre-stage-two-phi-samples.rds $(RDS)/wsre-stage-two-psi-samples.rds
 	$(RSCRIPT) $<
 
-$(PLOTS)/stage-two-wsre-psi-trace.pdf : $(PLOTS)/stage-two-wsre-phi-trace.pdf
+$(PLOTS)/stage-two-wsre-psi-trace.png : $(PLOTS)/stage-two-wsre-phi-trace.png
 
 # stage two no wsre
 $(RDS)/no-wsre-stage-two-stage-one-indices.rds : $(SCRIPTS)/stage-two-no-wsre.R $(STAN_FILES)/sev-prior-psi-step.stan $(STAN_FILES)/sev-prior-stage-two-phi-lp.stan $(ICU_POST_SAMPLES) $(POOLED_PRIOR)
@@ -88,7 +89,11 @@ $(RDS)/no-wsre-stage-two-phi-samples.rds : $(RDS)/no-wsre-stage-two-stage-one-in
 
 $(RDS)/no-wsre-stage-two-psi-samples.rds : $(RDS)/no-wsre-stage-two-stage-one-indices.rds 
 
-$(PLOTS)/stage-two-no-wsre-phi-trace.pdf : $(SCRIPTS)/stage-two-no-wsre-plotter.R $(PLOT_SETTINGS) $(RDS)/no-wsre-stage-two-phi-samples.rds $(RDS)/no-wsre-stage-two-psi-samples.rds
+$(PLOTS)/stage-two-no-wsre-phi-trace.png : $(SCRIPTS)/stage-two-no-wsre-plotter.R $(PLOT_SETTINGS) $(RDS)/no-wsre-stage-two-phi-samples.rds $(RDS)/no-wsre-stage-two-psi-samples.rds
 	$(RSCRIPT) $<
 
-$(PLOTS)/stage-two-no-wsre-psi-trace.pdf : $(PLOTS)/stage-two-no-wsre-phi-trace.pdf
+$(PLOTS)/stage-two-no-wsre-psi-trace.png : $(PLOTS)/stage-two-no-wsre-phi-trace.png
+
+# Compare and contrast! 
+$(PLOTS)/melded-posterior-compare.pdf : $(SCRIPTS)/melded-posterior-plotter.R $(PLOT_SETTINGS) $(RDS)/no-wsre-stage-two-phi-samples.rds $(RDS)/no-wsre-stage-two-psi-samples.rds $(RDS)/wsre-stage-two-phi-samples.rds $(RDS)/wsre-stage-two-psi-samples.rds
+	$(RSCRIPT) $<

@@ -14,15 +14,17 @@ phi_trace <- bayesplot::mcmc_trace(
 
 n_plot_psi <- 1000
 n_total <- dim(psi_samples)[1]
-plot_vec <- (n_total - n_plot_psi) : (n_total)
+plot_vec <- round(seq(from = 500, to = n_total, length.out = n_plot_psi))
 psi_trace <- bayesplot::mcmc_trace(psi_samples[plot_vec, , ])
 
 ggsave_halfheight(
   plot = phi_trace,
-  file = "plots/stage-two-wsre-phi-trace.pdf"
+  file = "plots/stage-two-wsre-phi-trace.png",
+  device = "png"
 )
 
 ggsave_halfheight(
   plot = psi_trace,
-  file = "plots/stage-two-wsre-psi-trace.pdf"
+  file = "plots/stage-two-wsre-psi-trace.png",
+  device = "png"
 )

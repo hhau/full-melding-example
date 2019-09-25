@@ -6,7 +6,7 @@ fontfamily: tgpagella
 fontsize: 10pt
 papersize: a4
 geometry: margin=2.25cm
-# bibliography: ../0bibliography/year-1-bib.bib
+bibliography: ../0bibliography/year-1-bib.bib
 csl: aam71-test.csl
 output: 
   pdf_document:
@@ -74,11 +74,13 @@ where $\pi^{\text{det}}$ is the age group constant probability of detection, and
 
 ## Model ordering
 
-The multi-stage Metropolis-Hastings MCMC approach of @goudie:etal:18 necessitates an order in which we consider the submodels.
 Here, there is a natural ordering due to the non-invertible link function used to compute $\phi_{a}$.
-In general melding is mathematically insensitive to this ordering, as any link function can be extended into an invertible one without affecting the outcome.
+
+The multi-stage Metropolis-Hastings MCMC approach of @goudie:etal:18 requires us to choose an order, i.e. which submodel should be in which stage.
+In general melding is mathematically insensitive to this ordering, as any deterministic, non-invertible link function can be extended into an invertible one without theoretically affecting the output of the sampling process.
 However, in practice the performance of the multi-stage sampler heavily depends on the choice of link function extension, and hence the order of the submodels is important.
 
+<!-- I'm not sure the following is okay in general, need some comment about how this lines up with our specific example. -->
 A natural ordering is to consider the "widest" submodel first.
 This way we are least sensitive to differences in location between the models.
 The cost is that we are susceptible to particle degeneracy, as there may be few samples from the wider submodel in the region of support under the melded model.
@@ -88,9 +90,17 @@ Recognising particle degeneracy is a relatively well understood problem [cite SM
 
 See Figure&nbsp;\ref{fig:prior_comparison}.
 
-```{r prior_comparison, fig.cap = "Prior comparison, should look like the paper."}
+- In both the severity model and the ICU model, the prior marginal distribution for $\phi$ is unknown.
+- However, the prior distribution for $\phi$ in the ICU models is practically flat in the ROI (See left panel of figure 1)
+- This implies that the self-density ratio of two points in the ROI is effectively 1 everywhere.
+- Using the naive KDE gives back a self-density ratio that is indistinguishable from 1 for all values of phi sampled in stage one. (SHOW THIS?)
+
+```{r prior_comparison, fig.cap = "Prior comparison, should look like the original melding paper."}
 knitr::include_graphics("plots/prior-comparison.pdf")
 ```
+
+- The severity model has a prior marginal distribution for $\phi$ that is not flat everywhere.
+- This is a good property from an evidence synthesis stand point (model contains useful information), however it necessitates the use of our weighted-sample self-density ratio estimation methodology.
 
 # Sample the ICU Posterior
 
@@ -100,10 +110,19 @@ See Figure&nbsp;\ref{fig:icu_post_plot}.
 knitr::include_graphics("plots/icu-posterior.pdf")
 ```
 
+- emphasise this is the stage one target, spell out the stage two target and how they cancel?
+  - Don't have to do this in all the detail, refer back to methodology section.
+
 
 # Estimate the severity self-density ratio using `wsre`
 
 We use a grid of 100 points for the mean of the Gaussian weighting functions $\mu_{\wfindex}$ based on taking 10 equally spaced values, between 30 and 275 for $\phi_{1}$, and 500 and 3000 for $\phi_{2}$, and $\sigma^2_{\wfindex} = (25^2, 250^2)$ for all $\wfindex$.
+Each weighted target has 1250 MCMC samples drawn from it.
+
+For comparison, we draw 15000 samples from $\pd_{2}(\phi)$ which we use to estimate $\hat{\pd}_{2}(\phi)$
+
+- New example uses 100 weighting functions, with 1000 samples per weighted target. Compares the output from this with naive KDE using 100000 samples.
+  - Tue Sep 24 14:48:39 2019: Still waiting to see if we get the same behaviour
 
 
 # Melding
@@ -128,23 +147,53 @@ knitr::include_graphics("plots/stage-two-wsre-phi-trace.pdf")
 
 $\psi_{2}$ trace:
 
-```{r psi_trace_wsre, fig.cap = "$\\psi_{2}$ trace, final 1000 samples. Mixing is governed by the mixing of $\\phi$."}
-knitr::include_graphics("plots/stage-two-wsre-psi-trace.pdf")
+```{r psi_trace_wsre, fig.cap = "$\\psi_{2}$ trace, thinned to 1000 samples per chain. Mixing is governed by the mixing of $\\phi$."}
+knitr::include_graphics("plots/stage-two-wsre-psi-trace.png")
 ```
 
 ### Traceplots of $\phi_{2}$ __without__ `wsre`
 
-```{r phi_trace_no_wsre, fig.cap = "$\\phi$ trace without the self-density ratio estimate."}
-knitr::include_graphics("plots/stage-two-no-wsre-phi-trace.pdf")
+```{r phi_trace_no_wsre, fig.cap = "$\\phi$ trace without the self-density ratio estimate. We see the behaviour we saw in the toy example. Demonstrates the fragility of the example."}
+knitr::include_graphics("plots/stage-two-no-wsre-phi-trace.png")
 ```
+
+Explain that: 
+
+- KDE has produced an underestimate (by many orders of magnitude) in the tails
+- This leads to an acceptance probability much larger than it should be (because the proposal term is on the bottom of the MH ratio).
+- Hence moves to improbable values of $\phi$ are associated with acceptance probabilities that have enormous quantities of error on them.
+- Leads to chains being far too likely to move to these improbable values.
+- Once at this improbable value, the KDE error then has the opposite effect, as the underestimate now results in the chain being unable to move back to probable values.
+- Leads to the "staircase to nowhere" behaviour seen in Figure&nbsp;\ref{fig:phi_trace_no_wsre}.
 
 $\psi_{2}$ trace:
 
-```{r psi_trace_no_wsre, fig.cap = "$\\psi_{2}$ trace, final 1000 samples, no self-density estimate."}
-knitr::include_graphics("plots/stage-two-no-wsre-psi-trace.pdf")
+```{r psi_trace_no_wsre, fig.cap = "$\\psi_{2}$ trace, thinned to 1000 samples per chain, no self-density estimate."}
+knitr::include_graphics("plots/stage-two-no-wsre-psi-trace.png")
 ```
 
+### Creating a similar version of Figure 8 from the original paper
+
+```{r melded_posterior_compare, fig.cap = "Melded posterior comparison, similar to Figure 8 of the melding paper. Very early version of plot."}
+knitr::include_graphics("plots/melded-posterior-compare.png")
+```
+
+_Wed Sep 18 15:37:37 2019_: This was written for an earlier version of the plot, which was a reasonable comparison to Figure 8 from the original paper, when chains hadn't gotten stuck out in the tails.
+
+- The shift to the left is explicable / the expected behaviour.
+- The right tail of $\phi_{1}$ is underestimated by the naive KDE.
+- This _increases_ the probability of moving there in the Stage two acceptance probability.
+- When the `wsre` estimate is used, the right tail estimate is improved, and the melded posterior for $\phi_{1}$ is correspondingly shifted to the left.
+- This induces a shift in the distribution of $\phi_{2}$ as well, as they are correlated.
+
+The new version of Figure&nbsp;\ref{fig:melded_posterior_compare} has some strange results due to the odd behaviour of some of the chains in Figure&nbsp;\ref{fig:phi_trace_no_wsre}.
+
 # Conclusion
+
+- Melding without employing the weighted-sample self-density ratio estimation (WSRE) idea results in clearly erroneous behaviour
+- Whilst there is no baseline "truth" to reference in this example (the implied joint distribution is tricky and not easily sampled), the sampler that employs the WSRE method for $\pd_{2}(\phi)$ produces more feasible results.
+- This improved behaviour is obtained using the same number of samples from the prior marginal distributions, or weighted versions thereof. 
+- There is some additional computation that must be performed, which results in runtimes of: ? and ?, however comparing these directly is misleading, as the output produced by one is clearly incorrect.
 
 Concise summary
 

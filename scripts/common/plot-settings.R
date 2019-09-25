@@ -20,9 +20,9 @@ bayesplot_theme_replace(
 
 # Colours - should all be darkest[1] to lightest[n] 
 blues <- c(
-  dark = "#00214F",
-  mid = "#2C7FB8",
-  light = "#A6E9FF"
+  "#00214F",
+  "#2C7FB8",
+  "#A6E9FF"
 ) 
 
 greens <- c(

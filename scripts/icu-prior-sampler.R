@@ -24,8 +24,8 @@ flog.info("Warming up ICU model (Prior)")
 jags <- jags.model(
   model_file,
   data = dat,
-  inits = list(inits1, inits2, inits3),
-  n.chains = 3,
+  inits = list(inits1, inits2),
+  n.chains = 2,
   n.adapt = 10000
 )
 
@@ -41,7 +41,7 @@ icu_prior_samples <- coda.samples(
   model = jags,
   variable.names = monitor,
   n.iter = 50000,
-  thin = 10
+  thin = 1
 )
 
 flog.info("Saving ICU samples to disk (Prior)")

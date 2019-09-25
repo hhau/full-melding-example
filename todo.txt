@@ -45,8 +45,17 @@ Tue Sep 17 11:11:33 2019
 - 13500 samples takes 5:16 hours
 - we can hence do a lot more in a job
 - thinning is going to become important
+  - not really, file sizes are still quite small.
 - Lets see if we can write out an RDS file with the SLURM job id in it?
+  - possible, perhaps unnecessary
 - Be able to read and batch arbitrary number of RDS files
+  - No problem, if we want to collapse over multiple simulations, we need to collapse over equal length chains first (just for array compatibility)
 - We need to have some ESS diagnostics
+  - True? I have yet to do this.
+  - Actually, unless I want to go to all the effort of checking what the computational cost of a single wsre/no wsre sample is, then I just need to do enough for the reader to believe that it is "fair enough"
 - phi_{a} is the only thing we should monitor for ESS
+  - still driven by phi_{1}
 - Still need to compare with / without wsre, consider recreating Fig 8 from the melding paper but just using log pooling, with/without wsre
+  - easy enough.
+
+Tue Sep 24 11:15:23 2019 check notebook for new things to do
