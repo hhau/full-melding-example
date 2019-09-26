@@ -23,7 +23,9 @@ ALL_PLOTS = $(PLOTS)/prior-comparison.pdf \
 	$(PLOTS)/stage-two-wsre-psi-trace.png \
 	$(PLOTS)/stage-two-no-wsre-phi-trace.png \
   $(PLOTS)/stage-two-no-wsre-psi-trace.png \
-  $(PLOTS)/melded-posterior-compare.pdf
+  $(PLOTS)/melded-posterior-compare.pdf \
+  $(PLOTS)/prior-stage-one-comparison.pdf \
+  $(PLOTS)/stage-two-traces.pdf
 
 all : $(WRITEUP)
 plots : $(ALL_PLOTS)
@@ -67,7 +69,7 @@ $(RDS)/sev-prior-wsre-estimate.rds : $(SCRIPTS)/sev-prior-wsre-sampler.R $(STAN_
 	$(RSCRIPT) $<
 
 # Stage two with wsre
-POOLED_PRIOR = $(SCRIPTS)/pooled-prior.R $(RDS)/model1-kde.rds $(RDS)/model1-dprior-im.rds $(RDS)/model1-im.rds $(RDS)/sev-prior-wsre-estimate.rds
+POOLED_PRIOR = $(SCRIPTS)/pooled-prior.R $(RDS)/model1-kde.rds $(RDS)/model1-dprior-im.rds $(RDS)/model1-im.rds $(SEV_PRIOR_SAMPLES)
 
 $(RDS)/wsre-stage-two-stage-one-indices.rds : $(SCRIPTS)/stage-two-wsre.R $(STAN_FILES)/sev-prior-psi-step.stan $(STAN_FILES)/sev-prior-stage-two-phi-lp.stan $(ICU_POST_SAMPLES) $(POOLED_PRIOR) 
 	$(RSCRIPT) $<
@@ -96,4 +98,10 @@ $(PLOTS)/stage-two-no-wsre-psi-trace.png : $(PLOTS)/stage-two-no-wsre-phi-trace.
 
 # Compare and contrast! 
 $(PLOTS)/melded-posterior-compare.pdf : $(SCRIPTS)/melded-posterior-plotter.R $(PLOT_SETTINGS) $(RDS)/no-wsre-stage-two-phi-samples.rds $(RDS)/no-wsre-stage-two-psi-samples.rds $(RDS)/wsre-stage-two-phi-samples.rds $(RDS)/wsre-stage-two-psi-samples.rds
+	$(RSCRIPT) $<
+
+$(PLOTS)/prior-stage-one-comparison.pdf : $(SCRIPTS)/stage-one-plotter.R $(PLOT_SETTINGS) $(ICU_PRIOR_SAMPLES) $(ICU_POST_SAMPLES) $(SEV_PRIOR_SAMPLES)
+	$(RSCRIPT) $<
+
+$(PLOTS)/stage-two-traces.pdf : $(SCRIPTS)/stage-two-trace-plotter.R $(PLOT_SETTINGS) $(RDS)/no-wsre-stage-two-phi-samples.rds $(RDS)/wsre-stage-two-phi-samples.rds
 	$(RSCRIPT) $<
