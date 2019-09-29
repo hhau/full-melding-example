@@ -23,20 +23,19 @@ knitr::opts_chunk$set(echo = FALSE, comment = NA, out.width = "85%", fig.align =
 
 # Model origins
 
-@presanis:etal:14 undertakes a large evidence synthesis in order to estimate the severity of the H1N1 pandemic amongst the population of England.
+@presanis:etal:14 undertook a large evidence synthesis in order to estimate the severity of the H1N1 pandemic amongst the population of England.
 The H1N1 pandemic occurred in three _waves_, and the change in severity between waves is of interest.
 Due to the time between waves, the available sources of data differ between waves.
-During the third wave some data sources had a decrease in typical sample size, and began aggregating previously available data in a coarser manner.
+During the third wave some data sources underwent a decrease in typical sample size, and began aggregating previously available data in a coarser manner.
 To ameliorate the impact of the data coarsening, independent data on one aspect of the large severity model, the number of suspected influenza cases in hospital's intensive care units (ICU), can be incorporated.
 @goudie:etal:18 presents a Markov melding approach for joining the independent ICU model with a simplified version of the larger severity model.
-
 We consider this same pair of models here, as the melded parameter has an unknown prior marginal distribution under both models, and the independent nature of the data sources could result in a degree of conflict between the various intermediary melding distributions.
-This is also an example of the Markov melding where the melded model has no obvious implied joint model, as the link parameter is not a root node in either model.
+This is also an example of the Markov melding where the melded model has no obvious implied joint model, as the link parameter is not a root node, in a DAG representation, for either model.
 
 ## ICU
 
 The data for the ICU submodel ($\modelindex = 1$) considers aggregate weekly counts of patients in the ICU of all the hospitals in England.
-Such data is an underestimate of the true number of patients affected by H1N1 influenza, and also requires careful temporal consideration, as patients enter and exit the ICU in a stochastic manner.
+Such data is known to be an underestimate of the true number of patients affected by H1N1 influenza, and also requires careful temporal consideration, as patients enter and exit the ICU in a stochastic manner.
 The third wave of the H1N1 influenza predominantly occurred during a 78 day block between December 2010 and February 2011.
 ICU observations were recorded weekly on days $U = \{8, 15, \ldots, 78\}$, and considered the number of children $a = 1$ and adults $a = 2$ in the ICU on the day of observation.
 Denote a specific weekly observation as $y_{a, t}$ for $t \in U$.
@@ -46,7 +45,7 @@ The process has time inhomogeneous rate parameter $\lambda_{a, t}$ for $t \in T$
 
 To address the difference between the observation times $U$, and the daily support of our Poisson process $T$, the expected number of influenza patients in the ICU at time $t$ is
 \input{tex-input/icu-model/0010-thinned-poisson-process.tex}
-An coherent indentifiability assumption of $\eta_{a, 1} = 0$ is required, and assumes that no influenza patients were in the ICU at time $t = 0$.
+A identifiability assumption of $\eta_{a, 1} = 0$ is required, which reasonably assumes that no H1N1 influenza patients were in the ICU at time $t = 0$.
 
 Influenza strains do not exist in isolation, hence not all ICU admissions with influenza symptoms were the result of the H1N1 pandemic.
 Consider $\lambda_{a, t}$ as the expected number of _suspected_ H1N1 cases.
@@ -59,15 +58,19 @@ The estimate of $\pi_{a, t}^{\text{pos}}$ is then used to compute $\phi_{a}$
 \input{tex-input/icu-model/0021-phi-icu-calc.tex}
 This summation is a non-invertible function, which guides our choice of model ordering when melding, which we will discuss in Section&nbsp;\ref{discussion}. 
 
-The priors for the remaining parameters are a lognormal random walk for the expected number of new admissions 
+Lastly, we specify priors for the remaining parameters. 
+A lognormal random walk is used for the expected number of new admissions 
 \input{tex-input/icu-model/0030-prior-set-one.tex}
-for $t = 2, 3, \ldots, 78$, and priors for the age group specific exit rates
+for $t = 2, 3, \ldots, 78$ and $a = {1, 2}$.
+Age group specific exit rates have informative priors specified for them in an identifiable manner 
 \input{tex-input/icu-model/0040-prior-set-two.tex}
+The lower bound on the positivity proportion has a flat prior
+\input{tex-input/icu-model/0041-prior-positivity-proportion.tex}
 
 ## Severity
 
 A simplified version of the remaining components of the large severity model of @presanis:etal:14 ($\modelindex = 2$) is considered here.
-The estimate of the cumulative number of ICU admissions $\phi_{a}$ is assumed to be an underestimate of the true number of of ICU admissions due to H1N1 $\chi_{a}$.
+The estimate of the cumulative number of ICU admissions, $\phi_{a}$, is assumed to be an underestimate of the true number of of ICU admissions due to H1N1, $\chi_{a}$.
 The model we consider to address this is 
 \input{tex-input/icu-model/0050-sev-submodel.tex}
 where $\pi^{\text{det}}$ is the age group constant probability of detection, and the priors on $\chi_{a}$ are appropriate summaries of the other components of the larger severity model.
@@ -120,7 +123,7 @@ From the erroneous behaviour displayed in the left column, we can infer that the
 This leads to an acceptance probability that is much larger than it should be, as the proposal term is in the denominator of Equation&nbsp;\eqref{eqn:icu-stage-two-acceptance-probability}.
 Hence, moves to improbable values of $\phi$ are associated with acceptance probabilities that are dominated by epistemic error in the KDE.
 Once at this improbable value, the KDE error then has the opposite effect, as the underestimate now results in the chain being unable to move back to probable values.
-The produces the "staircase to nowhere" behaviour seen in the left column of Figure&nbsp;\ref{fig:stage_two_phi_traces}.
+The produces the monotonic step-like behaviour seen in the left column of Figure&nbsp;\ref{fig:stage_two_phi_traces}.
 It would be reasonable to argue that given the visible behaviour in the bottom right panel of Figure&nbsp;\ref{fig:stage_two_phi_traces}, and usual suite of convergence criteria, the stage two sampler needs to be run for longer.
 However, the fact that the poor visual properties of the trace plots, and the associated numerical convergence criteria, could be ameliorated with additional sampling is encouraging, as this is not the case for the "No WSRE" sampler.
 
