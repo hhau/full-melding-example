@@ -31,6 +31,7 @@ To ameliorate the impact of the data coarsening, independent data on one aspect 
 @goudie:etal:18 presents a Markov melding approach for joining the independent ICU model with a simplified version of the larger severity model.
 We consider this same pair of models here, as the melded parameter has an unknown prior marginal distribution under both models, and the independent nature of the data sources could result in a degree of conflict between the various intermediary melding distributions.
 This is also an example of the Markov melding where the melded model has no obvious implied joint model, as the link parameter is not a root node, in a DAG representation, for either model.
+The code to reproduce all figures and outputs from this experiment is available at https://github.com/hhau/full-melding-example.
 
 ## ICU
 
@@ -45,7 +46,7 @@ The process has time inhomogeneous rate parameter $\lambda_{a, t}$ for $t \in T$
 
 To address the difference between the observation times $U$, and the daily support of our Poisson process $T$, the expected number of influenza patients in the ICU at time $t$ is
 \input{tex-input/icu-model/0010-thinned-poisson-process.tex}
-A identifiability assumption of $\eta_{a, 1} = 0$ is required, which reasonably assumes that no H1N1 influenza patients were in the ICU at time $t = 0$.
+An identifiability assumption of $\eta_{a, 1} = 0$ is required, which reasonably assumes that no H1N1 influenza patients were in the ICU at time $t = 0$.
 
 Influenza strains do not exist in isolation, hence not all ICU admissions with influenza symptoms were the result of the H1N1 pandemic.
 Consider $\lambda_{a, t}$ as the expected number of _suspected_ H1N1 cases.

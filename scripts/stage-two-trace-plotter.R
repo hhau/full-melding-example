@@ -60,9 +60,62 @@ p1 <- ggplot(plot_tbl, aes(x = iteration, y = value, group = chain, col = chain)
   xlab("Iteration") +
   NULL 
 
-p1
-
 ggsave_halfheight(
   filename = "plots/stage-two-traces.pdf",
   plot = p1
 )
+
+presentation_tbl_1 <- plot_tbl %>%
+  filter(method == "'No'~'WSRE'", parameter == "phi[1]")
+
+presentation_plot_1 <- ggplot(presentation_tbl_1, aes(x = iteration, y = value, group = chain, col = chain)) +
+  geom_line(alpha = 0.8) +
+  scale_discrete_manual(
+    aesthetics = "col",
+    values = bayesplot:::chain_colors(15),
+  ) +
+  theme(
+    legend.position = "none",
+    strip.text.y = element_text(angle = 180),
+    strip.text = element_blank(),
+    axis.title.x = element_text(size = 16),
+    axis.title.y = element_text(size = 16)
+  ) + 
+  ylab(expression(phi)) +
+  xlab("Iteration") +
+  NULL 
+
+ggsave(
+  filename = "plots/stage-two-trace-presentation-one.png",
+  plot = presentation_plot_1,
+  width = 7,
+  height = 3
+)
+
+presentation_tbl_2 <- plot_tbl %>%
+  filter(method == "'WSRE'", parameter == "phi[1]")
+
+presentation_plot_2 <- ggplot(presentation_tbl_2, aes(x = iteration, y = value, group = chain, col = chain)) +
+  geom_line(alpha = 0.8) +
+  scale_discrete_manual(
+    aesthetics = "col",
+    values = bayesplot:::chain_colors(15),
+  ) +
+  theme(
+    legend.position = "none",
+    strip.text.y = element_text(angle = 180),
+    strip.text = element_blank(),
+    axis.title.x = element_text(size = 16),
+    axis.title.y = element_text(size = 16)
+  ) + 
+  ylab(expression(phi)) +
+  xlab("Iteration") +
+  NULL 
+
+ggsave(
+  filename = "plots/stage-two-trace-presentation-two.png",
+  plot = presentation_plot_2,
+  width = 7,
+  height = 3
+)
+

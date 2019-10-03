@@ -35,7 +35,7 @@ wsre_obj <- wsre(
     wf_exponent = 1, 
     target_dimension = target_dimension
   ),
-  n_mcmc_samples = 1000,
+  n_mcmc_samples = 100, # makes 10,000 total
   flog_threshold = futile.logger::TRACE
 )
 

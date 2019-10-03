@@ -26,7 +26,8 @@ generate_sub_init <- function() {
 
 init_list <- lapply(1 : 5, function(x) generate_sub_init())
 
-n_sev_prior_total <- 100000 # hundred thousand
+n_sev_prior_total <- 10000 # Mon Sep 30 22:55:58 2019: NEW, 10,000
+#OLD: hundred thousand
 
 model_fit <- sampling(
   prefit,

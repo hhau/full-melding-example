@@ -24,8 +24,8 @@ flog.info("Warming up ICU model (Posterior)")
 jags <- jags.model(
   model_file,
   data = dat,
-  inits = list(inits1, inits2, inits3),
-  n.chains = 3,
+  inits = list(inits1, inits2),
+  n.chains = 2,
   n.adapt = 1000
 )
 
@@ -40,7 +40,7 @@ flog.info("Sampling ICU model (Posterior)")
 icu_post_samples <- coda.samples(
   model = jags,
   variable.names = monitor,
-  n.iter = 500000,
+  n.iter = 50000,
   thin = 50
 )
 
