@@ -6,12 +6,12 @@ library(dplyr)
 library(tibble)
 
 no_wsre_phi_file <- Sys.glob(
-  "rds/no-wsre-stage-two-phi-samples.rds"
+  "rds/no-wsre-stage-two-phi-samples-100k-samples-prior-estimates.rds"
 )
 no_wsre_phi_samples <- readRDS(no_wsre_phi_file)
 
 wsre_phi_file <- Sys.glob(
-  "rds/wsre-stage-two-phi-samples.rds"
+  "rds/wsre-stage-two-phi-samples-100k-samples-prior-estimates.rds"
 )
 wsre_phi_samples <- readRDS(wsre_phi_file)
 
@@ -23,7 +23,7 @@ wsre_trace <- bayesplot::mcmc_trace_data(
 )
 
 # these need to be parse'able as expressions for labeller = label_parsed
-no_wsre_trace$method <- "'No'~'WSRE'"
+no_wsre_trace$method <- "'Naive'"
 wsre_trace$method <- "'WSRE'"
 
 plot_tbl <- bind_rows(
@@ -61,12 +61,12 @@ p1 <- ggplot(plot_tbl, aes(x = iteration, y = value, group = chain, col = chain)
   NULL 
 
 ggsave_halfheight(
-  filename = "plots/stage-two-traces.pdf",
+  filename = "plots/stage-two-traces.png",
   plot = p1
 )
 
 presentation_tbl_1 <- plot_tbl %>%
-  filter(method == "'No'~'WSRE'", parameter == "phi[1]")
+  filter(method == "'Naive'", parameter == "phi[1]")
 
 presentation_plot_1 <- ggplot(presentation_tbl_1, aes(x = iteration, y = value, group = chain, col = chain)) +
   geom_line(alpha = 0.8) +
@@ -79,7 +79,8 @@ presentation_plot_1 <- ggplot(presentation_tbl_1, aes(x = iteration, y = value, 
     strip.text.y = element_text(angle = 180),
     strip.text = element_blank(),
     axis.title.x = element_text(size = 16),
-    axis.title.y = element_text(size = 16)
+    axis.title.y = element_text(size = 16),
+    axis.text.y = element_blank()
   ) + 
   ylab(expression(phi)) +
   xlab("Iteration") +
@@ -106,7 +107,8 @@ presentation_plot_2 <- ggplot(presentation_tbl_2, aes(x = iteration, y = value, 
     strip.text.y = element_text(angle = 180),
     strip.text = element_blank(),
     axis.title.x = element_text(size = 16),
-    axis.title.y = element_text(size = 16)
+    axis.title.y = element_text(size = 16),
+    axis.text.y = element_blank()
   ) + 
   ylab(expression(phi)) +
   xlab("Iteration") +

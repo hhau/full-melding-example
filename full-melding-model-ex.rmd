@@ -18,7 +18,7 @@ output:
     keep_tex: true
 ---
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, comment = NA, out.width = "85%", fig.align = "center", auto_pdf = TRUE)
+knitr::opts_chunk$set(echo = FALSE, comment = NA, out.width = "98%", fig.align = "center", auto_pdf = TRUE)
 ```
 
 # Model origins

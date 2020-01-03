@@ -55,10 +55,7 @@ p1 <- ggplot(plot_tbl, aes(x = x, y = y)) +
   facet_wrap(~ var, nrow = 1) +
   xlab(expression(phi[1])) +
   ylab(expression(phi[2])) +
-  labs(fill = "Density") +
-  theme(
-    legend.position = "none"
-  )
+  labs(fill = "Density") 
 
 ggsave_halfheight(
   filename = "plots/prior-comparison.pdf",

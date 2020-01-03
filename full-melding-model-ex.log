@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.25)  29 SEP 2019 07:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.6)  5 DEC 2019 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1080,19 +1080,19 @@ File: plots/prior-stage-one-comparison.pdf Graphic file (type pdf)
 <use plots/prior-stage-one-comparison.pdf>
 Package pdftex.def Info: plots/prior-stage-one-comparison.pdf  used on input li
 ne 256.
-(pdftex.def)             Requested size: 399.07793pt x 265.73894pt.
+(pdftex.def)             Requested size: 426.63174pt x 284.08653pt.
 [2] (./tex-input/icu-model/0060-icu-stage-two-acceptance-probability.tex [3 <./
 plots/prior-stage-one-comparison.pdf>])
 
 LaTeX Warning: Reference `sec:multiple-weighting-functions' on page 4 undefined
  on input line 311.
 
-<plots/stage-two-traces.pdf, id=109, 426.59375pt x 284.06125pt>
-File: plots/stage-two-traces.pdf Graphic file (type pdf)
-<use plots/stage-two-traces.pdf>
-Package pdftex.def Info: plots/stage-two-traces.pdf  used on input line 321.
-(pdftex.def)             Requested size: 399.07793pt x 265.73894pt.
-[4 <./plots/stage-two-traces.pdf>] [5] [6]pdfTeX warning (ext4): destination wi
+<plots/stage-two-traces.png, id=110, 1777.64125pt x 1185.42876pt>
+File: plots/stage-two-traces.png Graphic file (type png)
+<use plots/stage-two-traces.png>
+Package pdftex.def Info: plots/stage-two-traces.png  used on input line 321.
+(pdftex.def)             Requested size: 460.0601pt x 306.79332pt.
+[4 <./plots/stage-two-traces.png>] [5] [6]pdfTeX warning (ext4): destination wi
 th the same identifier (name{section.1}) has been already used, duplicate ignor
 ed
 <to be read again> 
@@ -1113,8 +1113,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 392.
  ) 
 Here is how much of TeX's memory you used:
  25219 strings out of 494553
- 487522 string characters out of 6176313
- 577745 words of memory out of 5000000
+ 487498 string characters out of 6176313
+ 577746 words of memory out of 5000000
  28324 multiletter control sequences out of 15000+600000
  42461 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1134,10 +1134,10 @@ derson/Library/TinyTeX/texmf-dist/fonts/type1/public/tex-gyre/qplb.pfb></Users/
 amanderson/Library/TinyTeX/texmf-dist/fonts/type1/public/tex-gyre/qplr.pfb></Us
 ers/amanderson/Library/TinyTeX/texmf-dist/fonts/type1/public/tex-gyre/qplri.pfb
 >
-Output written on full-melding-model-ex.pdf (7 pages, 1688195 bytes).
+Output written on full-melding-model-ex.pdf (7 pages, 1236824 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
+ 203 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
  38 named destinations out of 1000 (max. 500000)
  8319 words of extra memory for PDF output out of 10000 (max. 10000000)
 
