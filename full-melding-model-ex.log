@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.6)  5 DEC 2019 11:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.13)  13 FEB 2020 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **full-melding-model-ex.tex
 (./full-melding-model-ex.tex
-LaTeX2e <2018-12-01>
+LaTeX2e <2019-10-01> patch level 3
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -24,41 +24,31 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 ) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/tex-gyre/tgpagella.st
 y
 Package: tgpagella 2009/09/27 v1.2 TeX Gyre Pagella as default roman family
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/ltxcmds.st
-y
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/kvsetkeys.st
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.s
+ty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.st
 y
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/infwarerr.st
-y
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-))))) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.
-sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2018/12/01 v2.17b AMS math features
+Package: amsmath 2019/11/16 v2.17d AMS math features
 \@mathmargin=\skip43
 For additional information on amsmath, use the `?' option.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -74,20 +64,20 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 223.
+LaTeX Info: Redefining \frac on input line 227.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 385.
+LaTeX Info: Redefining \overline on input line 389.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 482.
-LaTeX Info: Redefining \dots on input line 485.
-LaTeX Info: Redefining \cdots on input line 606.
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -108,10 +98,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2844.
-LaTeX Info: Redefining \] on input line 2845.
-) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+LaTeX Info: Redefining \[ on input line 2858.
+LaTeX Info: Redefining \] on input line 2859.
+) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/base/fixltx2e.sty
 Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
 Applying: [2015/01/01] Old fixltx2e package on input line 46.
@@ -127,7 +121,8 @@ Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
-LaTeX Font Info:    Try loading font information for T1+qpl on input line 105.
+LaTeX Font Info:    Trying to load font information for T1+qpl on input line 10
+5.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/tex-gyre/t1qpl.fd
 File: t1qpl.fd 2009/09/25 v1.2 font definition file for T1/qpl
 )) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
@@ -156,7 +151,7 @@ File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+File: ts1enc.dfu 2019/07/11 v1.2j UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00A4 (decimal 164)
@@ -226,6 +221,8 @@ File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
    defining Unicode char U+25E6 (decimal 9702)
    defining Unicode char U+25EF (decimal 9711)
    defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+27E8 (decimal 10216)
+   defining Unicode char U+27E9 (decimal 10217)
    defining Unicode char U+FEFF (decimal 65279)
 ))
 LaTeX Info: Redefining \oldstylenums on input line 334.
@@ -293,17 +290,17 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2019/02/28 v2.7b Micro-typographical refinements (RS)
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
 \MT@toks=\toks23
 \MT@count=\count100
 LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen112
-LaTeX Info: Redefining \textmicrotypecontext on input line 1336.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
 \MT@listname@count=\count101
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdf
 tex.def
-File: microtype-pdftex.def 2019/02/28 v2.7b Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 914.
 LaTeX Info: Redefining \lslig on input line 914.
@@ -312,15 +309,12 @@ LaTeX Info: Redefining \lslig on input line 914.
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2019/02/28 v2.7b microtype main configuration file (RS)
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
 )) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.st
 y
-Package: geometry 2018/04/16 v5.8 Page Geometry
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count102
 \Gm@cntv=\count103
@@ -335,57 +329,55 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layoutvoffset=\dimen120
 \Gm@dimlist=\toks24
 ) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+Package: hyperref 2019/11/10 v7.00c Hypertext links for LaTeX
 
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/hobsub-hyper
-ref.sty
-Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
-
-
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/hobsub-gener
-ic.sty
-Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package hobsub Info: Skipping package `ifluatex' (already loaded).
-Package hobsub Info: Skipping package `ifvtex' (already loaded).
-Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package hobsub Info: Skipping package `etexcmds' (already loaded).
-Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.s
+ty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
-Package pdftexcmds Info: LuaTeX not detected.
+
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.s
+ty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2019/12/15 v1.9 Color options for hyperref/bookmark (HO)
+
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/hycolor/xcolor-patch.st
+y
+Package: xcolor-patch 2019/12/15 xcolor patch
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/hopatch.sty
 Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
-Package: xcolor-patch 2016/05/16 xcolor patch
-Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
-Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
-) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)))
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro
+.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen121
 \Hy@linkcounter=\count105
 \Hy@pagecounter=\count106
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2019/11/10 v7.00c Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
+) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count107
 
@@ -393,53 +385,75 @@ Now handling font encoding PD1 ...
 g
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4519.
-Package hyperref Info: Link nesting OFF on input line 4524.
-Package hyperref Info: Hyper index ON on input line 4527.
-Package hyperref Info: Plain pages OFF on input line 4534.
-Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4772.
+Package hyperref Info: Bookmarks ON on input line 4788.
 \c@Hy@tempcnt=\count108
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5125.
+LaTeX Info: Redefining \url on input line 5147.
 \XeTeXLinkMargin=\dimen122
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc
+.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
 \Fld@menulength=\count109
 \Field@Width=\dimen123
 \Fld@charsize=\dimen124
-Package hyperref Info: Hyper figures OFF on input line 6380.
-Package hyperref Info: Link nesting OFF on input line 6385.
-Package hyperref Info: Hyper index ON on input line 6388.
-Package hyperref Info: backreferencing OFF on input line 6395.
-Package hyperref Info: Link coloring OFF on input line 6400.
-Package hyperref Info: Link coloring with OCG OFF on input line 6405.
-Package hyperref Info: PDF/A mode OFF on input line 6410.
-LaTeX Info: Redefining \ref on input line 6450.
-LaTeX Info: Redefining \pageref on input line 6454.
+Package hyperref Info: Hyper figures OFF on input line 6418.
+Package hyperref Info: Link nesting OFF on input line 6423.
+Package hyperref Info: Hyper index ON on input line 6426.
+Package hyperref Info: backreferencing OFF on input line 6433.
+Package hyperref Info: Link coloring OFF on input line 6438.
+Package hyperref Info: Link coloring with OCG OFF on input line 6443.
+Package hyperref Info: PDF/A mode OFF on input line 6448.
+LaTeX Info: Redefining \ref on input line 6488.
+LaTeX Info: Redefining \pageref on input line 6492.
+
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
 \Hy@abspage=\count110
 \c@Item=\count111
 \c@Hfootnote=\count112
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
+File: hpdftex.def 2019/11/10 v7.00c Hyperref driver for pdfTeX
+
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
 \Fld@listcount=\count113
 \c@bookmark@seq@number=\count114
 
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/rerunfilecheck
-.sty
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfil
+echeck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquec
+ounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
+86.
 )
 \Hy@SectionHShift=\skip47
 )
 Package hyperref Info: Option `unicode' set `true' on input line 30.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2019/11/10 v7.00c Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -447,7 +461,7 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 30.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2019/11/01 v1.3d Standard LaTeX Graphics (DPC,SPQR)
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
@@ -455,19 +469,18 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
-) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/grffile.sty
-Package: grffile 2017/06/30 v1.18 Extended file name support for graphics (HO)
-Package grffile Info: Option `multidot' is set to `true'.
-Package grffile Info: Option `extendedchars' is set to `false'.
-Package grffile Info: Option `space' is set to `true'.
-Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
+) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
 ) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip48
@@ -496,9 +509,9 @@ Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.
 code.tex (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revi
 sion.tex)
-Package: pgfrcs 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
 ))
-Package: pgf 2019/05/09 v3.1.3 (3.1.3)
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.
 sty
@@ -506,7 +519,7 @@ sty
 sty
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
 s.code.tex
-Package: pgfsys 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys
 .code.tex
@@ -540,27 +553,27 @@ filtered.code.tex
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.c
 fg
-File: pgf.cfg 2019/05/09 v3.1.3 (3.1.3)
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
 s-pdftex.def
-File: pgfsys-pdftex.def 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
 s-common-pdf.def
-File: pgfsys-common-pdf.def 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
 ssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfsyssoftpath@smallbuffer@items=\count120
 \pgfsyssoftpath@bigbuffer@items=\count121
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsy
 sprotocol.code.tex
-File: pgfsysprotocol.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -579,7 +592,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 e.code.tex
-Package: pgfcore 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code
 .tex
@@ -622,7 +635,7 @@ ions.integerarithmetics.code.tex)))
 tex)
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 epoints.code.tex
-File: pgfcorepoints.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@picminx=\dimen140
 \pgf@picmaxx=\dimen141
 \pgf@picminy=\dimen142
@@ -640,19 +653,19 @@ File: pgfcorepoints.code.tex 2019/05/09 v3.1.3 (3.1.3)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 epathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@path@lastx=\dimen154
 \pgf@path@lasty=\dimen155
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 epathusage.code.tex
-File: pgfcorepathusage.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@shorten@end@additional=\dimen156
 \pgf@shorten@start@additional=\dimen157
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 escopes.code.tex
-File: pgfcorescopes.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box31
 \pgf@hbox=\box32
 \pgf@layerbox@main=\box33
@@ -660,83 +673,83 @@ File: pgfcorescopes.code.tex 2019/05/09 v3.1.3 (3.1.3)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 egraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgflinewidth=\dimen158
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 etransformations.code.tex
-File: pgfcoretransformations.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@pt@x=\dimen159
 \pgf@pt@y=\dimen160
 \pgf@pt@temp=\dimen161
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 equick.code.tex
-File: pgfcorequick.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 eobjects.code.tex
-File: pgfcoreobjects.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 epathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 earrows.code.tex
-File: pgfcorearrows.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfarrowsep=\dimen162
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 eshade.code.tex
-File: pgfcoreshade.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen163
 \pgf@sys@shading@range@num=\count125
 \pgf@shadingcount=\count126
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 eimage.code.tex
-File: pgfcoreimage.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 eexternal.code.tex
-File: pgfcoreexternal.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfexternal@startupbox=\box34
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 elayers.code.tex
-File: pgfcorelayers.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 etransparency.code.tex
-File: pgfcoretransparency.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 epatterns.code.tex
-File: pgfcorepatterns.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcor
 erdf.code.tex
-File: pgfcorerdf.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodule
 shapes.code.tex
-File: pgfmoduleshapes.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfnodeparttextbox=\box35
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodule
 plot.code.tex
-File: pgfmoduleplot.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfco
 mp-version-0-65.sty
-Package: pgfcomp-version-0-65 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@nodesepstart=\dimen164
 \pgf@nodesepend=\dimen165
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfco
 mp-version-1-18.sty
-Package: pgfcomp-version-1-18 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.st
 y
@@ -749,7 +762,7 @@ fmath.sty
 .tex))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.
 code.tex
-Package: pgffor 2019/05/09 v3.1.3 (3.1.3)
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code
 .tex)
@@ -760,11 +773,11 @@ Package: pgffor 2019/05/09 v3.1.3 (3.1.3)
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/tikz.code.tex
-Package: tikz 2019/05/09 v3.1.3 (3.1.3)
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibr
 aryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@plot@mark@count=\count127
 \pgfplotmarksize=\dimen168
 )
@@ -772,8 +785,10 @@ File: pgflibraryplothandlers.code.tex 2019/05/09 v3.1.3 (3.1.3)
 \tikz@lasty=\dimen170
 \tikz@lastxsaved=\dimen171
 \tikz@lastysaved=\dimen172
-\tikzleveldistance=\dimen173
-\tikzsiblingdistance=\dimen174
+\tikz@lastmovetox=\dimen173
+\tikz@lastmovetoy=\dimen174
+\tikzleveldistance=\dimen175
+\tikzsiblingdistance=\dimen176
 \tikz@figbox=\box36
 \tikz@figbox@bg=\box37
 \tikz@tempbox=\box38
@@ -785,7 +800,7 @@ File: pgflibraryplothandlers.code.tex 2019/05/09 v3.1.3 (3.1.3)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodule
 matrix.code.tex
-File: pgfmodulematrix.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfmatrixcurrentrow=\count132
 \pgfmatrixcurrentcolumn=\count133
 \pgf@matrix@numberofcolumns=\count134
@@ -794,47 +809,47 @@ File: pgfmodulematrix.code.tex 2019/05/09 v3.1.3 (3.1.3)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryshapes.code.tex
-File: tikzlibraryshapes.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibraryshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/
 pgflibraryshapes.geometric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgflibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryshapes.misc.code.tex
-File: tikzlibraryshapes.misc.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/
 pgflibraryshapes.misc.code.tex
-File: pgflibraryshapes.misc.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgflibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryshapes.symbols.code.tex
-File: tikzlibraryshapes.symbols.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/
 pgflibraryshapes.symbols.code.tex
-File: pgflibraryshapes.symbols.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgflibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryshapes.arrows.code.tex
-File: tikzlibraryshapes.arrows.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/
 pgflibraryshapes.arrows.code.tex
-File: pgflibraryshapes.arrows.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgflibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryshapes.callouts.code.tex
@@ -842,11 +857,11 @@ z/libraries/tikzlibraryshapes.callouts.code.tex
 pgflibraryshapes.callouts.code.tex))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/
 pgflibraryshapes.multipart.code.tex
-File: pgflibraryshapes.multipart.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfnodepartlowerbox=\box40
 \pgfnodeparttwobox=\box41
 \pgfnodepartthreebox=\box42
@@ -878,17 +893,17 @@ aryfpu.code.tex)
 ))
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarythrough.code.tex
-File: tikzlibrarythrough.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibrarythrough.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarybackgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@layerbox@background=\box60
 \pgf@layerboxsaved@background=\box61
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryfit.code.tex
-File: tikzlibraryfit.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibraryfit.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarydecorations.pathmorphing.code.tex
@@ -896,14 +911,14 @@ z/libraries/tikzlibrarydecorations.pathmorphing.code.tex
 z/libraries/tikzlibrarydecorations.code.tex
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodule
 decorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen175
-\pgfdecoratedremainingdistance=\dimen176
-\pgfdecoratedinputsegmentcompleteddistance=\dimen177
-\pgfdecoratedinputsegmentremainingdistance=\dimen178
-\pgf@decorate@distancetomove=\dimen179
+\pgfdecoratedcompleteddistance=\dimen177
+\pgfdecoratedremainingdistance=\dimen178
+\pgfdecoratedinputsegmentcompleteddistance=\dimen179
+\pgfdecoratedinputsegmentremainingdistance=\dimen180
+\pgf@decorate@distancetomove=\dimen181
 \pgf@decorate@repeatstate=\count137
-\pgfdecorationsegmentamplitude=\dimen180
-\pgfdecorationsegmentlength=\dimen181
+\pgfdecorationsegmentamplitude=\dimen182
+\pgfdecorationsegmentlength=\dimen183
 )
 \tikz@lib@dec@box=\box62
 )
@@ -916,21 +931,21 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count138
 \output=\toks37
 \linenoprevgraf=\count139
-\linenumbersep=\dimen182
-\linenumberwidth=\dimen183
+\linenumbersep=\dimen184
+\linenumberwidth=\dimen185
 \c@linenumber=\count140
 \c@pagewiselinenumber=\count141
 \c@LN@truepage=\count142
 \c@internallinenumber=\count143
 \c@internallinenumbers=\count144
-\quotelinenumbersep=\dimen184
-\bframerule=\dimen185
-\bframesep=\dimen186
+\quotelinenumbersep=\dimen186
+\bframerule=\dimen187
+\bframesep=\dimen188
 \bframebox=\box63
 LaTeX Info: Redefining \\ on input line 3056.
-) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/pdflscape.st
-y
-Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+)
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
@@ -951,8 +966,8 @@ LaTeX Font Info:    ... okay on input line 152.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 152.
 LaTeX Font Info:    ... okay on input line 152.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 152.
-
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+52.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -968,6 +983,7 @@ Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
+LaTeX Info: Redefining \showhyphens on input line 152.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1011,11 +1027,13 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 \AtBeginShipoutBox=\box64
 Package hyperref Info: Link coloring OFF on input line 152.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
-
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/gettitlestri
-ng.sty
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettit
+lestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count145
 )
@@ -1027,39 +1045,34 @@ LaTeX Info: Redefining \nameref on input line 152.
 \openout4 = `full-melding-model-ex.out'.
 
 
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/epstopdf-base.
-sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-)
+(/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-b
+ase.sty
+Package: epstopdf-base 2019-12-09 v2.10 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+85.
 
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sy
 s.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 153.
-
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+53.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 177.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 177
+.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 177.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 177
+.
 (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/amanderson/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1075,23 +1088,23 @@ LaTeX Warning: Reference `discussion' on page 2 undefined on input line 226.
 (./tex-input/icu-model/0030-prior-set-one.tex) (./tex-input/icu-model/0040-prio
 r-set-two.tex) (./tex-input/icu-model/0041-prior-positivity-proportion.tex) (./
 tex-input/icu-model/0050-sev-submodel.tex)
-<plots/prior-stage-one-comparison.pdf, id=76, 426.59375pt x 284.06125pt>
+<plots/prior-stage-one-comparison.pdf, id=76, 460.72125pt x 170.6375pt>
 File: plots/prior-stage-one-comparison.pdf Graphic file (type pdf)
 <use plots/prior-stage-one-comparison.pdf>
 Package pdftex.def Info: plots/prior-stage-one-comparison.pdf  used on input li
 ne 256.
-(pdftex.def)             Requested size: 426.63174pt x 284.08653pt.
-[2] (./tex-input/icu-model/0060-icu-stage-two-acceptance-probability.tex [3 <./
-plots/prior-stage-one-comparison.pdf>])
+(pdftex.def)             Requested size: 460.08038pt x 170.40013pt.
+[2] (./tex-input/icu-model/0060-icu-stage-two-acceptance-probability.tex)
 
-LaTeX Warning: Reference `sec:multiple-weighting-functions' on page 4 undefined
+LaTeX Warning: Reference `sec:multiple-weighting-functions' on page 3 undefined
  on input line 311.
 
-<plots/stage-two-traces.png, id=110, 1777.64125pt x 1185.42876pt>
+[3 <./plots/prior-stage-one-comparison.pdf>]
+<plots/stage-two-traces.png, id=111, 1920.17375pt x 947.54pt>
 File: plots/stage-two-traces.png Graphic file (type png)
 <use plots/stage-two-traces.png>
 Package pdftex.def Info: plots/stage-two-traces.png  used on input line 321.
-(pdftex.def)             Requested size: 460.0601pt x 306.79332pt.
+(pdftex.def)             Requested size: 460.06003pt x 227.02386pt.
 [4 <./plots/stage-two-traces.png>] [5] [6]pdfTeX warning (ext4): destination wi
 th the same identifier (name{section.1}) has been already used, duplicate ignor
 ed
@@ -1112,13 +1125,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 392.
  ) 
 Here is how much of TeX's memory you used:
- 25219 strings out of 494553
- 487498 string characters out of 6176313
- 577746 words of memory out of 5000000
- 28324 multiletter control sequences out of 15000+600000
- 42461 words of font info for 67 fonts, out of 8000000 for 9000
+ 25643 strings out of 494107
+ 494875 string characters out of 6172571
+ 580787 words of memory out of 5000000
+ 29136 multiletter control sequences out of 15000+600000
+ 42467 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,11n,72p,506b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,72p,506b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/amanderson/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.6
 00pk>{/Users/amanderson/Library/TinyTeX/texmf-dist/fonts/enc/dvips/tex-gyre/q-e
 c.enc} </Users/amanderson/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt20
@@ -1134,7 +1147,7 @@ derson/Library/TinyTeX/texmf-dist/fonts/type1/public/tex-gyre/qplb.pfb></Users/
 amanderson/Library/TinyTeX/texmf-dist/fonts/type1/public/tex-gyre/qplr.pfb></Us
 ers/amanderson/Library/TinyTeX/texmf-dist/fonts/type1/public/tex-gyre/qplri.pfb
 >
-Output written on full-melding-model-ex.pdf (7 pages, 1236824 bytes).
+Output written on full-melding-model-ex.pdf (7 pages, 1168775 bytes).
 PDF statistics:
  203 PDF objects out of 1000 (max. 8388607)
  166 compressed objects within 2 object streams

@@ -60,9 +60,12 @@ p1 <- ggplot(plot_tbl, aes(x = iteration, y = value, group = chain, col = chain)
   xlab("Iteration") +
   NULL 
 
-ggsave_halfheight(
+ggsave(
   filename = "plots/stage-two-traces.png",
-  plot = p1
+  plot = p1,
+  width = 16.2,
+  height = 8,
+  units = 'cm'
 )
 
 presentation_tbl_1 <- plot_tbl %>%

@@ -88,6 +88,17 @@ plot_factor <- factor(
 
 plot_tbl$plot_factor <- plot_factor
 
+fancy_scientific <- function(l) {
+ # turn in to character string in scientific notation
+ l <- format(l, scientific = TRUE)
+ # quote the part before the exponent to keep all the digits
+ l <- gsub("^(.*)e", "'\\1'e", l)
+ # turn the 'e+' into plotmath format
+ l <- gsub("e", "%*%10^", l)
+ # return this as an expression
+ parse(text = l)
+}
+
 # pal <- wes_palette("Zissou1", 100, type = "continuous")
 pal <- RColorBrewer::brewer.pal(9, "Blues")
 
@@ -98,7 +109,7 @@ p1 <- ggplot(plot_tbl, aes(x = x, y = y, col = fill)) +
     contour = FALSE,
     n = 250
   ) +
-  scale_fill_gradientn(colours = pal) +
+  scale_fill_gradientn(colours = pal, labels = fancy_scientific) +
   scale_x_continuous(limits = c(0, 300), expand = c(0, 0)) +
   scale_y_continuous(limits = c(0, 3000), expand = c(0, 0)) +
   facet_wrap(
@@ -117,8 +128,11 @@ p1 <- ggplot(plot_tbl, aes(x = x, y = y, col = fill)) +
 
 p1
 
-ggsave_halfheight(
+ggsave(
   filename = "plots/prior-stage-one-comparison.pdf",
-  plot = p1
+  plot = p1,
+  width = 16.2,
+  height = 6,
+  units = 'cm'
 )
 
