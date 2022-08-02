@@ -131,8 +131,8 @@ p1
 ggsave(
   filename = "plots/prior-stage-one-comparison.pdf",
   plot = p1,
-  width = 16.2,
-  height = 6,
+  width = display_settings$half_page_plot_width * 1.68,
+  height = 3.5 * 1.35,
   units = 'cm'
 )
 

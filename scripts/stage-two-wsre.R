@@ -18,7 +18,7 @@ icu_vars <- c("tot.conf[1]", "tot.conf[2]")
 icu_phi_samples <- icu_stage_one_samples[[1]][, icu_vars]
 
 n_stage_two_mcmc <- 13500 * 5.5
-n_chain <- 5
+n_chain <- 24
 
 flog.info("Compiling Stan objects")
 # compile various Stan objects
@@ -33,7 +33,7 @@ psi_step_stanprefit <- stan_model("scripts/stan-files/sev-prior-psi-step.stan")
 flog.info("Starting MCMC loop")
 
 # write the loop
-mcmc_output <- mclapply(1 : n_chain, mc.cores = n_chain, function(chain_id) {
+mcmc_output <- mclapply(1 : n_chain, mc.cores = 6, function(chain_id) {
 
   flog.info("Allocating containers")
   

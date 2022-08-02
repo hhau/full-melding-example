@@ -15,11 +15,15 @@ wsre_phi_file <- Sys.glob(
 )
 wsre_phi_samples <- readRDS(wsre_phi_file)
 
-no_wsre_trace <- bayesplot::mcmc_trace_data(
-  no_wsre_phi_samples
+thin_vec <- round(
+  seq(from = 0, to = dim(wsre_phi_samples)[1], length.out = 50000)
 )
+no_wsre_trace <- bayesplot::mcmc_trace_data(
+  no_wsre_phi_samples[thin_vec, , ]
+)
+
 wsre_trace <- bayesplot::mcmc_trace_data(
-  wsre_phi_samples
+  wsre_phi_samples[thin_vec, , ]
 )
 
 # these need to be parse'able as expressions for labeller = label_parsed
@@ -54,7 +58,9 @@ p1 <- ggplot(plot_tbl, aes(x = iteration, y = value, group = chain, col = chain)
   ) +
   theme(
     legend.position = "none",
-    strip.text.y = element_text(angle = 180)
+    strip.text.y.left = element_text(angle = 0),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
   ) + 
   ylab("") +
   xlab("Iteration") +
